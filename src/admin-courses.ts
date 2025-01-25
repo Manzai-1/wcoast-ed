@@ -1,5 +1,6 @@
 import { ICourse } from "./models/ICourse";
-import { mapFormToICourse } from "./utils/courseServices.js";
+import { mapFormToICourse } from "./utils/course-services.js";
+import { postData } from "./utils/http-services.js";
 
 const form:HTMLFormElement = document.querySelector<HTMLFormElement>('#new-course')!;
 const list = document.querySelector<HTMLDivElement>('#course-list')!;
@@ -12,16 +13,10 @@ const handleSaveCourse = async(e: SubmitEvent):Promise<void>=>{
     e.preventDefault();
 
     const course:ICourse = mapFormToICourse(new FormData(form));
-
-    try {
-        const response:Response = await fetch('http://localhost:3000/courses', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(course),
-        });
-    } catch(error) {
+    try{
+        postData('http://localhost:3000/courses', course);
+    } catch(error:any)
+    {
         console.error(error);
     }
 }

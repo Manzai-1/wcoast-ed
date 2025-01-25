@@ -1,4 +1,5 @@
-import { mapFormToICourse } from "./utils/courseServices.js";
+import { mapFormToICourse } from "./utils/course-services.js";
+import { postData } from "./utils/http-services.js";
 const form = document.querySelector('#new-course');
 const list = document.querySelector('#course-list');
 const initApp = () => {
@@ -8,13 +9,7 @@ const handleSaveCourse = async (e) => {
     e.preventDefault();
     const course = mapFormToICourse(new FormData(form));
     try {
-        const response = await fetch('http://localhost:3000/courses', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(course),
-        });
+        postData('http://localhost:3000/courses', course);
     }
     catch (error) {
         console.error(error);

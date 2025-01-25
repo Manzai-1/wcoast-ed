@@ -10,6 +10,50 @@
       "startDate": "2025-03-01",
       "price": "5000",
       "imgUrl": "../src/assets/images/no-img.png"
+    },
+    {
+      "id": "343f",
+      "title": "javascript",
+      "courseNr": "123",
+      "lengthDays": "14",
+      "onSite": "Nej",
+      "remote": "Ja",
+      "startDate": "2025-03-01",
+      "price": "5000",
+      "imgUrl": "../src/assets/images/no-img.png"
+    },
+    {
+      "id": "2fd4",
+      "title": "javascript",
+      "courseNr": "123",
+      "lengthDays": "14",
+      "onSite": "Nej",
+      "remote": "Ja",
+      "startDate": "2025-03-01",
+      "price": "5000",
+      "imgUrl": "../src/assets/images/no-img.png"
+    },
+    {
+      "id": "83a2",
+      "title": "javascript",
+      "courseNr": "123",
+      "lengthDays": "14",
+      "onSite": "Nej",
+      "remote": "Ja",
+      "startDate": "2025-03-01",
+      "price": "5000",
+      "imgUrl": "../src/assets/images/no-img.png"
+    },
+    {
+      "id": "9ba5",
+      "title": "javascript",
+      "courseNr": "123",
+      "lengthDays": "14",
+      "onSite": "Nej",
+      "remote": "Ja",
+      "startDate": "2025-03-01",
+      "price": "5000",
+      "imgUrl": "../src/assets/images/no-img.png"
     }
   ],
   "users": [],
