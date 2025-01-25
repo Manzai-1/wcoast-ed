@@ -1,4 +1,4 @@
-"use strict";
+import { mapFormToICourse } from "./utils/courseServices.js";
 const form = document.querySelector('#new-course');
 const list = document.querySelector('#course-list');
 const initApp = () => {
@@ -6,18 +6,15 @@ const initApp = () => {
 };
 const handleSaveCourse = async (e) => {
     e.preventDefault();
-    const data = new FormData(form);
-    data.append('imgUrl', '../src/assets/images/no-img.png');
-    const body = Object.fromEntries(data);
+    const course = mapFormToICourse(new FormData(form));
     try {
         const response = await fetch('http://localhost:3000/courses', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(body),
+            body: JSON.stringify(course),
         });
-        loadCourses();
     }
     catch (error) {
         console.error(error);

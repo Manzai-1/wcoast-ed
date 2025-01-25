@@ -1,16 +1,17 @@
-const form = document.querySelector<HTMLFormElement>('#new-course')!;
+import { ICourse } from "./models/ICourse";
+import { mapFormToICourse } from "./utils/courseServices.js";
+
+const form:HTMLFormElement = document.querySelector<HTMLFormElement>('#new-course')!;
 const list = document.querySelector<HTMLDivElement>('#course-list')!;
 
 const initApp = ()=>{
     loadCourses();
 }
 
-const handleSaveCourse = async(e: SubmitEvent)=>{
+const handleSaveCourse = async(e: SubmitEvent):Promise<void>=>{
     e.preventDefault();
 
-    const data = new FormData(form);
-    data.append('imgUrl','../src/assets/images/no-img.png');
-    const body:Object = Object.fromEntries(data);
+    const course:ICourse = mapFormToICourse(new FormData(form));
 
     try {
         const response:Response = await fetch('http://localhost:3000/courses', {
@@ -18,10 +19,8 @@ const handleSaveCourse = async(e: SubmitEvent)=>{
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(body),
+            body: JSON.stringify(course),
         });
-
-        loadCourses();
     } catch(error) {
         console.error(error);
     }
