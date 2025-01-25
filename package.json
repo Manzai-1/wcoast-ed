@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsc --watch",
-    "server": "npx json-server db.json"
+    "server": "npx json-server db.json",
+    "dev": "tsc --watch"
   },
   "keywords": [],
   "author": "",

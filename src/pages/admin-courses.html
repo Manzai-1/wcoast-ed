@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <script type="module" src="../../dist/admin-courses.js" defer></script>
+    <title>Westcoast Education</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="container">
+          <ul class="menu">
+            <li class="logo">
+              <a class="page-title" href="/index.html"> Westcoast Education</a>
+            </li>
+            <li class="toggle">
+              <input class="menu-btn" type="checkbox" id="menu-btn" />
+              <label class="menu-icon" for="menu-btn"
+                ><span class="nav-icon"></span>
+              </label>
+            </li>
+            <li class="menu-item">
+              <a href="../../src/index.html">Start</a>
+            </li>
+            <li class="menu-item"><a href="#">Om Oss</a></li>
+            <li class="menu-item"><a href="#">Kontakta Oss</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section id="course-form">
+        <h1>Lägg till en ny kurs</h1>
+        <form id="new-course">
+          <div class="form-control">
+            <label for="title">Kursnamn</label>
+            <input type="text" name="title" id="title" />
+          </div>
+          <div class="form-control">
+            <label for="courseNr">Kursnummer</label>
+            <input type="text" name="courseNr" id="courseNr" />
+          </div>
+          <div class="form-control">
+            <label for="lengthDays">Kursens längd</label>
+            <input type="text" name="lengthDays" id="lengthDays" />
+          </div>
+          <div class="form-control">
+            <label for="onSite">Klassrum</label>
+            <input type="checkbox" name="onSite" id="onSite" />
+          </div>
+          <div class="form-control">
+            <label for="remote">Distans</label>
+            <input type="checkbox" name="remote" id="remote" />
+          </div>
+          <div class="form-control">
+            <label for="startDate">Start Datum</label>
+            <input type="text" name="startDate" id="startDate" />
+          </div>
+          <div class="form-control">
+            <label for="price">Kostnad</label>
+            <input type="text" name="price" id="price" />
+          </div>
+          <button id="save-course" class="btn" type="submit">Skapa Kurs</button>
+        </form>
+      </section>
+      <section>
+        <div id="course-list"></div>
+      </section>
+    </main>
+    <footer>
+      <p>Westcoast Education &copy; 2025</p>
+    </footer>
+  </body>
+</html>
