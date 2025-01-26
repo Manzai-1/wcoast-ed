@@ -1,6 +1,6 @@
 import { mapFormToICourse } from "./utils/map-services.js";
 import { getData, postData } from "./utils/http-services.js";
-import { createCourseCard } from "./utils/dom.js";
+import { createCourseDiv } from "./utils/dom.js";
 const form = document.querySelector('#new-course');
 const list = document.querySelector('#course-list');
 const initApp = () => {
@@ -28,7 +28,7 @@ const loadCourses = async () => {
 };
 const displayCourses = (courses) => {
     courses.forEach((course) => {
-        const div = createCourseCard(course, '../../src/pages/admin-course-detail.html');
+        const div = createCourseDiv(course);
         list.appendChild(div);
     });
 };

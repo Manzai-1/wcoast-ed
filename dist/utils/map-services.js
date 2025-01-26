@@ -7,7 +7,7 @@ export const mapFormToICourse = (data) => {
         remote: getBool(data.get('remote')),
         startDate: getNumber(data.get('startDate')),
         price: getNumber(data.get('price')),
-        imgUrl: '../src/assets/images/no-img.png',
+        imgUrl: '../../src/assets/images/no-img.png',
     };
 };
 const getString = (str) => {

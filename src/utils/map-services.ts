@@ -9,7 +9,7 @@ export const mapFormToICourse = (data:FormData):ICourse=>{
         remote: getBool(data.get('remote') as string),
         startDate: getNumber(data.get('startDate') as string),
         price: getNumber(data.get('price') as string),
-        imgUrl: '../src/assets/images/no-img.png',
+        imgUrl: '../../src/assets/images/no-img.png',
     };
 }
 

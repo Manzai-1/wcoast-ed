@@ -31,9 +31,9 @@
       </nav>
     </header>
     <main>
-      <section id="course-form">
-        <h1>Lägg till en ny kurs</h1>
-        <form id="new-course">
+      <section class="course-form">
+        <h1>Skapa en ny kurs</h1>
+        <form id="new-course" class="new-course">
           <div class="form-control">
             <label for="title">Kursnamn</label>
             <input type="text" name="title" id="title" />
@@ -65,7 +65,19 @@
           <button id="save-course" class="btn" type="submit">Skapa Kurs</button>
         </form>
       </section>
-      <div id="course-list">
+      <div class="course-list" id="course-list">
+        <div class="course-wrapper">
+          <div class="course">
+            <img
+              src="../../src/assets/images/no-img.png"
+              alt="Course Image"
+              class="course-image" />
+            <div class="course-img-details">
+              <h2 class="course-img-title">Introduction to TypeScript</h2>
+              <p class="course-img-date">Start Date: February 1, 2025</p>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
     <footer>

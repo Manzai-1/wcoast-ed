@@ -1,7 +1,7 @@
 import { ICourse } from "./models/ICourse";
 import { mapFormToICourse } from "./utils/map-services.js";
 import { getData, postData } from "./utils/http-services.js";
-import { createCourseCard } from "./utils/dom.js";
+import { createCourseDiv } from "./utils/dom.js";
 
 const form:HTMLFormElement = document.querySelector<HTMLFormElement>('#new-course')!;
 const list = document.querySelector<HTMLDivElement>('#course-list')!;
@@ -34,7 +34,7 @@ const loadCourses = async()=>{
 
 const displayCourses = (courses: ICourse[])=>{
     courses.forEach((course)=>{
-        const div:HTMLDivElement = createCourseCard(course, '../../src/pages/admin-course-detail.html');
+        const div:HTMLDivElement = createCourseDiv(course);
         list.appendChild(div);
     });
 }
