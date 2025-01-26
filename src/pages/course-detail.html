@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <script type="module" src="../../dist/course-detail.js" defer></script>
+    <title>Westcoast Education</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="container">
+          <ul class="menu">
+            <li class="logo">
+              <a class="page-title" href="/index.html"> Westcoast Education</a>
+            </li>
+            <li class="toggle">
+              <input class="menu-btn" type="checkbox" id="menu-btn" />
+              <label class="menu-icon" for="menu-btn"
+                ><span class="nav-icon"></span>
+              </label>
+            </li>
+            <li class="menu-item">
+              <a href="../../src/index.html">Start</a>
+            </li>
+            <li class="menu-item"><a href="#">Om Oss</a></li>
+            <li class="menu-item"><a href="#">Kontakta Oss</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="course-container" id="course-detail-div">
+        <img src="../../src/assets/images/no-img.png" alt="Course Image" class="course-image">
+        <div class="course-info">
+          <h2 id="course-title" class="course-title">Advanced JavaScript</h2>
+          <p class="course-detail">
+            <span class="course-description">Course Number:</span>
+            <span id="course-number" class="course-value">JS-101</span>
+          </p>
+          <p class="course-detail">
+            <span class="course-description">Length:</span>
+            <span id="course-length" class="course-value">30 days</span>
+          </p>
+          <p class="course-detail">
+            <span class="course-description">On-Site:</span>
+            <span id="course-onsite" class="course-value">Yes</span>
+          </p>
+          <p class="course-detail">
+            <span class="course-description">Remote:</span>
+            <span id="course-remote" class="course-value">No</span>
+          </p>
+          <p class="course-detail">
+            <span class="course-description">Start Date:</span>
+            <span id="course-start-date" class="course-value">March 15, 2025</span>
+          </p>
+          <p class="course-detail">
+            <span class="course-description">Cost:</span>
+            <span id="course-cost" class="course-value">$1,200</span>
+          </p>
+          <button class="register-button">Register Now</button>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>Westcoast Education &copy; 2025</p>
+    </footer>
+  </body>
+</html>

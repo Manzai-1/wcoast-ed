@@ -28,7 +28,7 @@ const loadCourses = async () => {
 };
 const displayCourses = (courses) => {
     courses.forEach((course) => {
-        const div = createCourseDiv(course);
+        const div = createCourseDiv(course, `http://127.0.0.1:5500/src/pages/admin-course-detail.html?${course.id}`);
         list.appendChild(div);
     });
 };
