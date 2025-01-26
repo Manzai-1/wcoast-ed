@@ -10,6 +10,14 @@ export const mapFormToICourse = (data) => {
         imgUrl: '../../src/assets/images/no-img.png',
     };
 };
+export const mapFormToIUser = (data) => {
+    return {
+        id: getString(data.get('email')),
+        name: getString(data.get('name')),
+        address: getString(data.get('address')),
+        mobileNr: getString(data.get('mobile')),
+    };
+};
 const getString = (str) => {
     return str !== null ? str : '';
 };

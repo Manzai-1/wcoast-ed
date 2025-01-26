@@ -16,8 +16,7 @@ const handleSaveCourse = async(e: SubmitEvent):Promise<void>=>{
     const course:ICourse = mapFormToICourse(new FormData(form));
     try{
         postData('http://localhost:3000/courses', course);
-    } catch(error:any)
-    {
+    } catch(error:any){
         console.error(error);
     }
 }

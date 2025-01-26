@@ -27,7 +27,9 @@ export const createCourseDetailDiv = (course) => {
           ${createCourseDetailP('course-remote', 'Distans', course.remote)}
           ${createCourseDetailP('course-start-date', 'Startdatum', course.startDate)}
           ${createCourseDetailP('course-cost', 'Pris', course.price)}
-          <button class="register-button">Registrera</button>
+          <a href="http://127.0.0.1:5500/src/pages/course-registration.html?id=${course.id}">  
+            <button class="register-button">Registrera</button>
+          </a>
         </div>
         `;
     return div;

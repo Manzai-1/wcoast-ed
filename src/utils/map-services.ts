@@ -1,4 +1,5 @@
 import { ICourse } from "../models/ICourse";
+import { IUser } from "../models/IUser";
 
 export const mapFormToICourse = (data:FormData):ICourse=>{
     return {
@@ -10,6 +11,15 @@ export const mapFormToICourse = (data:FormData):ICourse=>{
         startDate: getNumber(data.get('startDate') as string),
         price: getNumber(data.get('price') as string),
         imgUrl: '../../src/assets/images/no-img.png',
+    };
+}
+
+export const mapFormToIUser = (data:FormData):IUser=>{
+    return {
+        id: getString(data.get('email') as string),
+        name: getString(data.get('name') as string),
+        address: getString(data.get('address') as string),
+        mobileNr: getString(data.get('mobile') as string),
     };
 }
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/css/site.css" />
-    <script type="module" src="../../dist/course-detail.js" defer></script>
+    <script type="module" src="../../dist/course-registration.js" defer></script>
     <title>Westcoast Education</title>
   </head>
   <body>
@@ -31,8 +31,32 @@
       </nav>
     </header>
     <main>
-      <div class="course-container" id="course-detail-div">
-      </div>
+      <section class="course-form">
+        <form id="user-registration-form" class="user-registration-form">
+
+          <div class="form-control">
+            <label for="email">Epost</label>
+            <input type="email" name="email" id="email" required />
+          </div>
+
+      
+          <div id="registration-fields" class="registration-fields">
+            <div class="form-control">
+              <label for="name">Namn</label>
+              <input type="text" name="name" id="name"/>
+            </div>
+            <div class="form-control">
+              <label for="address">Adress</label>
+              <input type="text" name="address" id="address"/>
+            </div>
+            <div class="form-control">
+              <label for="mobile">Mobilnummer</label>
+              <input type="tel" name="mobile" id="mobile"/>
+            </div>
+          </div>
+          <button id="register-user-btn" class="btn" type="submit">Registrera</button>
+        </form>
+      </section>
     </main>
     <footer>
       <p>Westcoast Education &copy; 2025</p>
