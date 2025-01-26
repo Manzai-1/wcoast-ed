@@ -1,6 +1,6 @@
 import { IRegistration } from "./models/IRegistration";
 import { IUser } from "./models/IUser";
-import { getData, postData } from "./utils/http-services.js";
+import { getData, postData, updateData } from "./utils/http-services.js";
 import { mapFormToIUser } from "./utils/map-services.js";
 
 const registerForm = document.querySelector<HTMLFormElement>('#user-registration-form')!;
@@ -16,7 +16,13 @@ const handleRegisterUser = async(e:SubmitEvent)=>{
     const registry:IRegistration[] = await getCourseRegistry(id);
 
     if(registry.length>0){
-        console.log('append to registry');
+        registry[0].users.push(user);
+        try{
+            updateData(`http://localhost:3000/registrations/${id}`, registry[0]);
+        } catch(error:any){
+            console.error(error);
+        }
+
     } else {
         const newRegistry:IRegistration = {
             id: id,

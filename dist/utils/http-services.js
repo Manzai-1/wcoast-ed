@@ -27,7 +27,7 @@ export const getData = async (endPoint) => {
 };
 export const updateData = async (url, data) => {
     try {
-        const response = await fetch(url, {
+        await fetch(url, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

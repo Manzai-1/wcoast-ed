@@ -32,14 +32,14 @@ export const getData = async (endPoint: string): Promise<Response> => {
   }
 };
 
-export const updateData = async (url: string, data: IRegistration) => {
+export const updateData = async (url: string, data: IRegistration|IUser[]) => {
   try {
-    const response = await fetch(url, {
-      method: 'PUT',
-      headers: {
+    await fetch(url, {
+        method: 'PUT',
+        headers: {
         'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
+        },
+        body: JSON.stringify(data),
     });
   } catch (error: any) {
     throw new Error(error);
