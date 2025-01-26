@@ -100,31 +100,17 @@
       "imgUrl": "../../src/assets/images/no-img.png"
     }
   ],
-  "users": [
+  "registrations": [
     {
-      "id": "123@gmail.com",
-      "name": "nisse",
-      "address": "gatan 1",
-      "mobileNr": "073101010"
-    },
-    {
-      "id": "1234@gmail.com",
-      "name": "nisse",
-      "address": "gatan 1",
-      "mobileNr": "073101010"
-    },
-    {
-      "id": "1235@gmail.com",
-      "name": "nisse",
-      "address": "gatan 1",
-      "mobileNr": "073101010"
-    },
-    {
-      "id": "pelle@gmail.com",
-      "name": "pelle",
-      "address": "gatan 2",
-      "mobileNr": "073444444"
+      "id": "343f",
+      "users": [
+        {
+          "id": "dawd@gmail.com",
+          "name": "pelle",
+          "address": "gatan 2",
+          "mobileNr": "073444444"
+        }
+      ]
     }
-  ],
-  "registrations": []
+  ]
 }
