@@ -1,4 +1,6 @@
+import { IUser } from "./IUser";
+
 export interface IRegistration{
     id:string;
-    users:[string];
+    users:[IUser];
 }
