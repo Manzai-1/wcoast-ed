@@ -47,6 +47,12 @@ main {
   align-items: center;
   padding: 10px;
   border-bottom: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.course:hover {
+  background: #6edacd;
+  cursor: pointer; 
 }
 
 .course:last-child {
@@ -129,28 +135,7 @@ main {
   cursor: pointer; 
 }
 
-/* customer collapsable div within courses */
-
-.course-customer-div {
-  display: block;
-}
-
-.toggle-button {
-  padding: 8px 12px;
-  margin-block: 5px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: #fff;
-  background-color: #004d40;;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.toggle-button:hover {
-  background-color: #006454;;
-}
+/* course customer table */
 
 .customer-table {
   width: 100%;

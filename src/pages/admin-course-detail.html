@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/css/site.css" />
-    <script type="module" src="./dist/app.js" defer></script>
+    <script type="module" src="../../dist/admin-courses.js" defer></script>
     <title>Westcoast Education</title>
   </head>
   <body>
@@ -31,8 +31,72 @@
       </nav>
     </header>
     <main>
-      <section id="courses">
+      <section class="course-form">
+        <h1>Skapa en ny kurs</h1>
+        <form id="new-course" class="new-course">
+          <div class="form-control">
+            <label for="title">Kursnamn</label>
+            <input type="text" name="title" id="title" />
+          </div>
+          <div class="form-control">
+            <label for="courseNr">Kursnummer</label>
+            <input type="text" name="courseNr" id="courseNr" />
+          </div>
+          <div class="form-control">
+            <label for="lengthDays">Kursens längd</label>
+            <input type="text" name="lengthDays" id="lengthDays" />
+          </div>
+          <div class="form-control">
+            <label for="onSite">Klassrum</label>
+            <input type="checkbox" name="onSite" id="onSite" />
+          </div>
+          <div class="form-control">
+            <label for="remote">Distans</label>
+            <input type="checkbox" name="remote" id="remote" />
+          </div>
+          <div class="form-control">
+            <label for="startDate">Start Datum</label>
+            <input type="text" name="startDate" id="startDate" />
+          </div>
+          <div class="form-control">
+            <label for="price">Kostnad</label>
+            <input type="text" name="price" id="price" />
+          </div>
+          <button id="save-course" class="btn" type="submit">Skapa Kurs</button>
+        </form>
       </section>
+      <div class="course-customers-div">
+        <table class="customer-table">
+          <thead>
+            <tr>
+              <th>Email</th>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Mobile Number</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>john.doe@example.com</td>
+              <td>John Doe</td>
+              <td>123 Elm Street</td>
+              <td>+123456789</td>
+            </tr>
+            <tr>
+              <td>jane.smith@example.com</td>
+              <td>Jane Smith</td>
+              <td>456 Oak Avenue</td>
+              <td>+987654321</td>
+            </tr>
+            <tr>
+              <td>sam.wilson@example.com</td>
+              <td>Sam Wilson</td>
+              <td>789 Pine Road</td>
+              <td>+112233445</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </main>
     <footer>
       <p>Westcoast Education &copy; 2025</p>
