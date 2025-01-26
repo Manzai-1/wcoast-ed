@@ -12,31 +12,31 @@ export const createCourseCard = (course:ICourse, courseDetailUrl:string):HTMLDiv
     //   return div;
 
     const div = document.createElement('div');
-    const imageAnchor = document.createElement('a');
-    const image = document.createElement('img');
-    const cardBody = document.createElement('div');
-    const heading = document.createElement('h3');
-    const p = document.createElement('p');
-    const small = document.createElement('small');
+    // const imageAnchor = document.createElement('a');
+    // const image = document.createElement('img');
+    // const cardBody = document.createElement('div');
+    // const heading = document.createElement('h3');
+    // const p = document.createElement('p');
+    // const small = document.createElement('small');
 
-    div.classList.add('course-image');
-    imageAnchor.href = `${courseDetailUrl}?id=${course.id}`;
-    image.alt = `${course.title}`;
-    image.src = course.imgUrl;
+    // div.classList.add('course-image');
+    // imageAnchor.href = `${courseDetailUrl}?id=${course.id}`;
+    // image.alt = `${course.title}`;
+    // image.src = course.imgUrl;
 
-    imageAnchor.appendChild(image);
-    div.appendChild(imageAnchor);
+    // imageAnchor.appendChild(image);
+    // div.appendChild(imageAnchor);
 
-    cardBody.classList.add('course-image');
-    heading.textContent = course.title;
+    // cardBody.classList.add('course-image');
+    // heading.textContent = course.title;
 
-    small.textContent = `Startar: ${course.startDate}`;
-    p.appendChild(small);
+    // small.textContent = `Startar: ${course.startDate}`;
+    // p.appendChild(small);
 
-    cardBody.appendChild(heading);
-    cardBody.appendChild(p);
+    // cardBody.appendChild(heading);
+    // cardBody.appendChild(p);
 
-    div.appendChild(cardBody);
+    // div.appendChild(cardBody);
 
     return div;
   };
