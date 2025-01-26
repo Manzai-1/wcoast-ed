@@ -5,10 +5,10 @@ export const createCourseDiv = (course) => {
             <img
               src="${course.imgUrl}"
               alt="${course.title}"
-              class="course-image" />
-            <div class="course-details">
-              <h2 class="course-title">${course.title}</h2>
-              <p class="course-date">Start Date: ${course.startDate}</p>
+              class="course-image"/>
+            <div class="course-img-details">
+              <h2 class="course-img-title">${course.title}</h2>
+              <p class="course-img-date">Start Date: ${course.startDate}</p>
             </div>
           </div>`;
     return div;
