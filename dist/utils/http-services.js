@@ -12,3 +12,16 @@ export const postData = async (endPoint, data) => {
         throw new Error(error);
     }
 };
+export const getData = async (endPoint) => {
+    try {
+        return await fetch(endPoint, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+    }
+    catch (error) {
+        throw new Error(error);
+    }
+};

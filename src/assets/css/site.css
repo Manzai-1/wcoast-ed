@@ -40,7 +40,7 @@ main {
   padding: 1rem;
 }
 
-#vehicles {
+#course-list {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   justify-content: space-around;
@@ -53,7 +53,7 @@ main {
   grid-template-rows: auto;
 }
 
-.vehicle-image {
+.course-image {
   border: solid 1px #ef6c00;
   background: #fff;
   min-width: 300px;
@@ -61,38 +61,38 @@ main {
   border-radius: 0.5rem;
 }
 
-.vehicle-image img {
+.course-image img {
   border-top-right-radius: 0.5rem;
   border-top-left-radius: 0.5rem;
   width: 100%;
 }
 
-.vehicle-image p {
+.course-image p {
   text-align: center;
   font-style: italic;
 }
 
 /* New vehicle form */
-#vehicle-form {
+#course-form {
   padding: 1.88rem 0;
   margin: 0 1rem;
 }
 
-#vehicle-form .form-control {
+#course-form .form-control {
   margin-bottom: 1rem;
 }
 
-#vehicle-form label {
+#course-form label {
   display: block;
 }
 
-#vehicle-form input {
+#course-form input {
   width: 100%;
   padding: 0.63rem;
   border: solid 1px #ddd;
 }
 
-#vehicle-form input:focus {
+#course-form input:focus {
   outline: none !important;
   border: solid 1px #ef6c00;
 }
@@ -294,11 +294,11 @@ nav ul li .menu-btn:checked ~ .menu-icon .nav-icon::after {
     display: none;
   }
 
-  #vehicles {
+  #course-list {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  #vehicle-form {
+  #course-form {
     max-width: 600px;
     margin: auto;
   }

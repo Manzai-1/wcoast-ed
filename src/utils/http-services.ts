@@ -15,3 +15,16 @@ export const postData = async(endPoint:string, data:ICourse|IUser|IRegistration)
         throw new Error(error);
     }
 }
+
+export const getData = async(endPoint:string):Promise<Response>=>{
+    try {
+        return await fetch(endPoint, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+    } catch(error:any) {
+        throw new Error(error);
+    }
+}

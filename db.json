@@ -9,7 +9,7 @@
       "remote": "Ja",
       "startDate": "2025-03-01",
       "price": "5000",
-      "imgUrl": "../src/assets/images/no-img.png"
+      "imgUrl": "../../src/assets/images/no-img.png"
     },
     {
       "id": "343f",
@@ -20,7 +20,7 @@
       "remote": "Ja",
       "startDate": "2025-03-01",
       "price": "5000",
-      "imgUrl": "../src/assets/images/no-img.png"
+      "imgUrl": "../../src/assets/images/no-img.png"
     },
     {
       "id": "2fd4",
@@ -31,7 +31,7 @@
       "remote": "Ja",
       "startDate": "2025-03-01",
       "price": "5000",
-      "imgUrl": "../src/assets/images/no-img.png"
+      "imgUrl": "../../src/assets/images/no-img.png"
     },
     {
       "id": "83a2",
@@ -42,7 +42,7 @@
       "remote": "Ja",
       "startDate": "2025-03-01",
       "price": "5000",
-      "imgUrl": "../src/assets/images/no-img.png"
+      "imgUrl": "../../src/assets/images/no-img.png"
     },
     {
       "id": "9ba5",
@@ -53,7 +53,40 @@
       "remote": "Ja",
       "startDate": "2025-03-01",
       "price": "5000",
-      "imgUrl": "../src/assets/images/no-img.png"
+      "imgUrl": "../../src/assets/images/no-img.png"
+    },
+    {
+      "id": "8a76",
+      "title": "javascript",
+      "courseNr": "123",
+      "lengthDays": "14",
+      "onSite": "Nej",
+      "remote": "Ja",
+      "startDate": "2025-03-01",
+      "price": "5000",
+      "imgUrl": "../../src/assets/images/no-img.png"
+    },
+    {
+      "id": "b6e2",
+      "title": "javascript",
+      "courseNr": "123",
+      "lengthDays": "14",
+      "onSite": "Nej",
+      "remote": "Ja",
+      "startDate": "2025-03-01",
+      "price": "5000",
+      "imgUrl": "../../src/assets/images/no-img.png"
+    },
+    {
+      "id": "f538",
+      "title": "javascript",
+      "courseNr": "123",
+      "lengthDays": "14",
+      "onSite": "Nej",
+      "remote": "Ja",
+      "startDate": "2025-03-01",
+      "price": "5000",
+      "imgUrl": "../../src/assets/images/no-img.png"
     }
   ],
   "users": [],
