@@ -8,24 +8,12 @@ const initApp = () => {
     loadCourseCustomers(id);
 };
 const loadCourseDetails = async (id) => {
-    try {
-        const response = await getData(`http://localhost:3000/courses?id=${id}`);
-        const course = await response.json();
-        displayCourseDetails(course[0]);
-    }
-    catch (error) {
-        console.error(error);
-    }
+    const course = await getData(`http://localhost:3000/courses?id=${id}`);
+    displayCourseDetails(course[0]);
 };
 const loadCourseCustomers = async (id) => {
-    try {
-        const response = await getData(`http://localhost:3000/registrations?id=${id}`);
-        const registry = await response.json();
-        displayCourseCustomers(registry[0]);
-    }
-    catch (error) {
-        console.error(error);
-    }
+    const registry = await getData(`http://localhost:3000/registrations?id=${id}`);
+    displayCourseCustomers(registry[0]);
 };
 const displayCourseDetails = (course) => {
     document.querySelector('#title').value = course.title;
@@ -47,12 +35,7 @@ const handleCourseUpdate = async (e) => {
     e.preventDefault();
     const id = location.search.split('=')[1];
     const course = mapFormToICourse(new FormData(courseForm));
-    try {
-        updateData(`http://localhost:3000/courses/${id}`, course);
-    }
-    catch (error) {
-        console.error(error);
-    }
+    updateData(`http://localhost:3000/courses/${id}`, course);
 };
 courseForm.addEventListener('submit', handleCourseUpdate);
 document.addEventListener('DOMContentLoaded', initApp);

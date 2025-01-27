@@ -9,22 +9,11 @@ const initApp = () => {
 const handleSaveCourse = async (e) => {
     e.preventDefault();
     const course = mapFormToICourse(new FormData(form));
-    try {
-        postData('http://localhost:3000/courses', course);
-    }
-    catch (error) {
-        console.error(error);
-    }
+    postData('http://localhost:3000/courses', course);
 };
 const loadCourses = async () => {
-    try {
-        const response = await getData('http://localhost:3000/courses');
-        const courses = await response.json();
-        displayCourses(courses);
-    }
-    catch (error) {
-        console.error(error);
-    }
+    const courses = await getData('http://localhost:3000/courses');
+    displayCourses(courses);
 };
 const displayCourses = (courses) => {
     courses.forEach((course) => {

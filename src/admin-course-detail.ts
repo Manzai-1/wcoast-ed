@@ -1,7 +1,7 @@
 import { ICourse } from "./models/ICourse";
 import { IRegistration } from "./models/IRegistration";
 import { createUserTable } from "./utils/dom.js";
-import { getData, postData, updateData } from "./utils/http-services.js";
+import { getData, updateData } from "./utils/http-services.js";
 import { mapFormToICourse } from "./utils/map-services.js";
 
 const courseForm = document.querySelector<HTMLFormElement>('#update-course-form')!;
@@ -13,23 +13,13 @@ const initApp = ()=>{
 }
 
 const loadCourseDetails = async(id:string)=>{
-    try{
-        const response:Response = await getData(`http://localhost:3000/courses?id=${id}`);
-        const course:ICourse[] = await response.json();
-        displayCourseDetails(course[0]);
-    }catch(error:any){
-        console.error(error);
-    }
+    const course:ICourse[] = await getData(`http://localhost:3000/courses?id=${id}`);
+    displayCourseDetails(course[0]);
 }
 
 const loadCourseCustomers = async(id:string)=>{
-    try{
-        const response:Response = await getData(`http://localhost:3000/registrations?id=${id}`);
-        const registry:IRegistration[] = await response.json();
-        displayCourseCustomers(registry[0]);
-    }catch(error:any){
-        console.error(error);
-    }
+    const registry:IRegistration[] = await getData(`http://localhost:3000/registrations?id=${id}`);
+    displayCourseCustomers(registry[0]);
 }
 
 const displayCourseDetails = (course:ICourse)=>{
@@ -55,11 +45,7 @@ const handleCourseUpdate = async(e:SubmitEvent)=>{
     const id:string = location.search.split('=')[1];
 
     const course:ICourse = mapFormToICourse(new FormData(courseForm));
-    try{
-        updateData(`http://localhost:3000/courses/${id}`, course);
-    } catch(error:any){
-        console.error(error);
-    }
+    updateData(`http://localhost:3000/courses/${id}`, course);
 }
 
 courseForm.addEventListener('submit', handleCourseUpdate);

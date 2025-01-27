@@ -6,14 +6,8 @@ const initApp = () => {
 };
 const loadCourseDetails = async () => {
     const id = location.search.split('=')[1];
-    try {
-        const response = await getData(`http://localhost:3000/courses?id=${id}`);
-        const course = await response.json();
-        courseDetails.innerHTML = '';
-        courseDetails.appendChild(createCourseDetailDiv(course[0]));
-    }
-    catch (error) {
-        console.error(error);
-    }
+    const course = await getData(`http://localhost:3000/courses?id=${id}`);
+    courseDetails.innerHTML = '';
+    courseDetails.appendChild(createCourseDetailDiv(course[0]));
 };
 document.addEventListener('DOMContentLoaded', initApp);

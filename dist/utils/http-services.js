@@ -7,6 +7,9 @@ export const postData = async (endPoint, data) => {
             },
             body: JSON.stringify(data),
         });
+        if (!response.ok) {
+            throw new Error(`${response.status} - ${endPoint}`);
+        }
     }
     catch (error) {
         throw new Error(error);
@@ -14,26 +17,35 @@ export const postData = async (endPoint, data) => {
 };
 export const getData = async (endPoint) => {
     try {
-        return await fetch(endPoint, {
+        const response = await fetch(endPoint, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
             },
         });
+        if (response.ok) {
+            return await response.json();
+        }
+        else {
+            throw new Error(`${response.status} - ${endPoint}`);
+        }
     }
     catch (error) {
         throw new Error(error);
     }
 };
-export const updateData = async (url, data) => {
+export const updateData = async (endPoint, data) => {
     try {
-        await fetch(url, {
+        const response = await fetch(endPoint, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(data),
         });
+        if (!response.ok) {
+            throw new Error(`${response.status} - ${endPoint}`);
+        }
     }
     catch (error) {
         throw new Error(error);
