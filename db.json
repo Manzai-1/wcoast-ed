@@ -98,6 +98,83 @@
       "startDate": "2025-04-01",
       "price": "2322",
       "imgUrl": "../../src/assets/images/no-img.png"
+    },
+    {
+      "title": "HTML & CSS",
+      "courseNr": "2993",
+      "lengthDays": "14",
+      "onSite": "Nej",
+      "remote": "Ja",
+      "startDate": "2025-06-01",
+      "price": "0",
+      "imgUrl": "../../src/assets/images/no-img.png",
+      "id": "3ee5"
+    },
+    {
+      "id": "4ead",
+      "title": "HTML & CSS",
+      "courseNr": "2993",
+      "lengthDays": "14",
+      "onSite": "Nej",
+      "remote": "Nej",
+      "startDate": "2025-06-01",
+      "price": "2333",
+      "imgUrl": "../../src/assets/images/no-img.png"
+    },
+    {
+      "id": "fb2f",
+      "title": "HTML & CSS",
+      "courseNr": "2993",
+      "lengthDays": "14",
+      "onSite": "Nej",
+      "remote": "Nej",
+      "startDate": "2025-06-01",
+      "price": "2333",
+      "imgUrl": "../../src/assets/images/no-img.png"
+    },
+    {
+      "id": "1720",
+      "title": "Blockchain",
+      "courseNr": "2993",
+      "lengthDays": "14",
+      "onSite": "Nej",
+      "remote": "Nej",
+      "startDate": "2025-06-01",
+      "price": "2333",
+      "imgUrl": "../../src/assets/images/no-img.png"
+    },
+    {
+      "id": "1068",
+      "title": "Blockchain",
+      "courseNr": "2993",
+      "lengthDays": "14",
+      "onSite": "Nej",
+      "remote": "Nej",
+      "startDate": "2025-06-01",
+      "price": "2333",
+      "imgUrl": "../../src/assets/images/no-img.png"
+    },
+    {
+      "id": "d375",
+      "title": "Smart contracts",
+      "courseNr": "239000",
+      "lengthDays": "21",
+      "onSite": "Ja",
+      "remote": "Ja",
+      "startDate": "2025-08-01",
+      "price": "9999",
+      "imgUrl": "../../src/assets/images/no-img.png"
+    },
+    {
+      "id": "8e65",
+      "title": "javascript",
+      "courseNr": "123",
+      "lengthDays": "14",
+      "onSite": "Nej",
+      "remote": "Ja",
+      "startDate": "2025-03-01",
+      "price": "5000",
+      "imgUrl": "../../src/assets/images/no-img.png"
     }
   ],
   "registrations": [

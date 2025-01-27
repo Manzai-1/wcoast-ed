@@ -213,7 +213,7 @@ a {
 .course-container {
   display: flex;
   align-items: center;
-  gap: 20px; /* Space between the image and course information */
+  gap: 20px; 
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
@@ -228,7 +228,7 @@ a {
 }
 
 .course-info {
-  flex: 1; /* Ensures the information takes up remaining space */
+  flex: 1; 
 }
 
 .course-title {
@@ -241,8 +241,8 @@ a {
   font-size: 1rem;
   color: #555;
   margin-bottom: 8px;
-  display: flex; /* Align description and value horizontally */
-  gap: 5px; /* Space between description and value */
+  display: flex;
+  gap: 5px; 
 }
 
 .course-description {

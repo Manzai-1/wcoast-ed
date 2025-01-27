@@ -24,13 +24,13 @@ export const mapFormToIUser = (data:FormData):IUser=>{
 }
 
 const getString = (str:string|null):string=>{
-    return str !== null ? str : '';
+    return str ? str : '';
 }
 
 const getNumber = (nr:string|null):string=>{
-    return nr !== null ? nr : '0';
+    return nr ? nr : '0';
 }
 
 const getBool = (str:string|null):string=>{
-    return str !== null ? 'Ja' : 'Nej';
+    return str ? 'Ja' : 'Nej';
 }

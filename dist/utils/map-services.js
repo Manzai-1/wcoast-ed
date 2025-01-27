@@ -19,11 +19,11 @@ export const mapFormToIUser = (data) => {
     };
 };
 const getString = (str) => {
-    return str !== null ? str : '';
+    return str ? str : '';
 };
 const getNumber = (nr) => {
-    return nr !== null ? nr : '0';
+    return nr ? nr : '0';
 };
 const getBool = (str) => {
-    return str !== null ? 'Ja' : 'Nej';
+    return str ? 'Ja' : 'Nej';
 };
