@@ -1,4 +1,5 @@
 import { ICourse } from '../models/ICourse';
+import { IUser } from '../models/IUser';
 
 export const createCourseDiv = (course: ICourse, courseDetailUrl:string): HTMLDivElement => {
   const div = document.createElement('div');
@@ -48,9 +49,10 @@ const createCourseDetailP = (id:string, description:string, value:string):string
   return p;
 }
 
-export const createUserTable = (): HTMLTableElement => {
-  const div = document.createElement('table');
-  div.innerHTML = `
+export const createUserTable = (users:[IUser]|[]): HTMLTableElement => {
+  const table = document.createElement('table');
+  table.classList.add('customer-table');
+  table.innerHTML = `
                 <thead>
                   <tr>
                     <th>Email</th>
@@ -60,26 +62,20 @@ export const createUserTable = (): HTMLTableElement => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>john.doe@example.com</td>
-                    <td>John Doe</td>
-                    <td>123 Elm Street</td>
-                    <td>+123456789</td>
-                  </tr>
-                  <tr>
-                    <td>jane.smith@example.com</td>
-                    <td>Jane Smith</td>
-                    <td>456 Oak Avenue</td>
-                    <td>+987654321</td>
-                  </tr>
-                  <tr>
-                    <td>sam.wilson@example.com</td>
-                    <td>Sam Wilson</td>
-                    <td>789 Pine Road</td>
-                    <td>+112233445</td>
-                  </tr>
+                ${users.map((user)=>createUserTr(user)).join('')}
                 </tbody>
               </table>
   `;
-  return div;
+  return table;
 };
+
+const createUserTr = (user:IUser):string=>{
+  return `
+    <tr>
+      <td>${user.id}</td>
+      <td>${user.name}</td>
+      <td>${user.address}</td>
+      <td>${user.mobileNr}</td>
+    </tr>
+  `;
+}

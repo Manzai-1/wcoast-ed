@@ -34,7 +34,7 @@ const loadCourses = async()=>{
 const displayCourses = (courses: ICourse[])=>{
     courses.forEach((course)=>{
         const div:HTMLDivElement = createCourseDiv(course, 
-            `http://127.0.0.1:5500/src/pages/admin-course-detail.html?${course.id}`
+            `http://127.0.0.1:5500/src/pages/admin-course-detail.html?id=${course.id}`
         );
         list.appendChild(div);
     });

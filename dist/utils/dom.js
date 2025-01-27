@@ -43,9 +43,10 @@ const createCourseDetailP = (id, description, value) => {
   `;
     return p;
 };
-export const createUserTable = () => {
-    const div = document.createElement('table');
-    div.innerHTML = `
+export const createUserTable = (users) => {
+    const table = document.createElement('table');
+    table.classList.add('customer-table');
+    table.innerHTML = `
                 <thead>
                   <tr>
                     <th>Email</th>
@@ -55,26 +56,19 @@ export const createUserTable = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>john.doe@example.com</td>
-                    <td>John Doe</td>
-                    <td>123 Elm Street</td>
-                    <td>+123456789</td>
-                  </tr>
-                  <tr>
-                    <td>jane.smith@example.com</td>
-                    <td>Jane Smith</td>
-                    <td>456 Oak Avenue</td>
-                    <td>+987654321</td>
-                  </tr>
-                  <tr>
-                    <td>sam.wilson@example.com</td>
-                    <td>Sam Wilson</td>
-                    <td>789 Pine Road</td>
-                    <td>+112233445</td>
-                  </tr>
+                ${users.map((user) => createUserTr(user)).join('')}
                 </tbody>
               </table>
   `;
-    return div;
+    return table;
+};
+const createUserTr = (user) => {
+    return `
+    <tr>
+      <td>${user.id}</td>
+      <td>${user.name}</td>
+      <td>${user.address}</td>
+      <td>${user.mobileNr}</td>
+    </tr>
+  `;
 };
