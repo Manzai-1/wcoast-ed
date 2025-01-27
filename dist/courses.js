@@ -5,14 +5,8 @@ const initApp = () => {
     loadCourses();
 };
 const loadCourses = async () => {
-    try {
-        const response = await getData('http://localhost:3000/courses');
-        const courses = await response.json();
-        displayCourses(courses);
-    }
-    catch (error) {
-        console.error(error);
-    }
+    const courses = await getData('http://localhost:3000/courses');
+    displayCourses(courses);
 };
 const displayCourses = (courses) => {
     courses.forEach((course) => {

@@ -10,14 +10,9 @@ const initApp = ()=>{
 
 const loadCourseDetails = async()=>{
     const id:string = location.search.split('=')[1];
-    try{
-        const response:Response = await getData(`http://localhost:3000/courses?id=${id}`);
-        const course:ICourse[] = await response.json();
-        courseDetails.innerHTML = '';
-        courseDetails.appendChild(createCourseDetailDiv(course[0]));
-    }catch(error:any){
-        console.error(error);
-    }
+    const course:ICourse[] = await getData(`http://localhost:3000/courses?id=${id}`);
+    courseDetails.innerHTML = '';
+    courseDetails.appendChild(createCourseDetailDiv(course[0]));
 }
 
 document.addEventListener('DOMContentLoaded', initApp);

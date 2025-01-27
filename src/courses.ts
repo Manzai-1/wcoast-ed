@@ -9,13 +9,8 @@ const initApp = ()=>{
 }
 
 const loadCourses = async()=>{
-    try{
-        const response:Response = await getData('http://localhost:3000/courses');
-        const courses:ICourse[] = await response.json();
-        displayCourses(courses);
-    }catch(error){
-        console.error(error);
-    }
+    const courses:ICourse[] = await getData('http://localhost:3000/courses');
+    displayCourses(courses);
 }
 
 const displayCourses = (courses: ICourse[])=>{
