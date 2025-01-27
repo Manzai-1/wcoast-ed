@@ -32,7 +32,7 @@ export const getData = async (endPoint: string): Promise<Response> => {
   }
 };
 
-export const updateData = async (url: string, data: IRegistration) => {
+export const updateData = async (url: string, data: IRegistration|ICourse) => {
   try {
     await fetch(url, {
         method: 'PUT',

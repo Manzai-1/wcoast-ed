@@ -1,15 +1,15 @@
 {
   "courses": [
     {
-      "id": "8b89",
       "title": "javascript",
       "courseNr": "123",
-      "lengthDays": "14",
-      "onSite": "Nej",
+      "lengthDays": "144",
+      "onSite": "Ja",
       "remote": "Ja",
       "startDate": "2025-03-01",
       "price": "5000",
-      "imgUrl": "../../src/assets/images/no-img.png"
+      "imgUrl": "../../src/assets/images/no-img.png",
+      "id": "8b89"
     },
     {
       "id": "343f",
@@ -23,15 +23,15 @@
       "imgUrl": "../../src/assets/images/no-img.png"
     },
     {
-      "id": "2fd4",
       "title": "javascript",
       "courseNr": "123",
       "lengthDays": "14",
-      "onSite": "Nej",
+      "onSite": "Ja",
       "remote": "Ja",
       "startDate": "2025-03-01",
       "price": "5000",
-      "imgUrl": "../../src/assets/images/no-img.png"
+      "imgUrl": "../../src/assets/images/no-img.png",
+      "id": "2fd4"
     },
     {
       "id": "83a2",

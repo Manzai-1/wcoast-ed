@@ -1,5 +1,7 @@
 import { createUserTable } from "./utils/dom.js";
-import { getData } from "./utils/http-services.js";
+import { getData, updateData } from "./utils/http-services.js";
+import { mapFormToICourse } from "./utils/map-services.js";
+const courseForm = document.querySelector('#update-course-form');
 const initApp = () => {
     const id = location.search.split('=')[1];
     loadCourseDetails(id);
@@ -41,4 +43,16 @@ const displayCourseCustomers = (registry) => {
     document.querySelector('#course-customers-div')
         .appendChild(table);
 };
+const handleCourseUpdate = async (e) => {
+    e.preventDefault();
+    const id = location.search.split('=')[1];
+    const course = mapFormToICourse(new FormData(courseForm));
+    try {
+        updateData(`http://localhost:3000/courses/${id}`, course);
+    }
+    catch (error) {
+        console.error(error);
+    }
+};
+courseForm.addEventListener('submit', handleCourseUpdate);
 document.addEventListener('DOMContentLoaded', initApp);
