@@ -18,7 +18,6 @@ const handleSaveCourse = async(e: SubmitEvent):Promise<void>=>{
 
     clearForm();
     loadCourses();
-
 }
 
 const loadCourses = async()=>{

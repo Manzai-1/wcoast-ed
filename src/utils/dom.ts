@@ -79,3 +79,33 @@ const createUserTr = (user:IUser):string=>{
     </tr>
   `;
 }
+
+export const createLoginDiv = ():HTMLDivElement=>{
+  const div = document.createElement('div');
+  div.id = '#login-div';
+  div.classList.add('course-form');
+  div.classList.add('popup');
+  div.innerHTML = `
+        <form id="user-registration-form" class="user-registration-form">
+          <div class="form-control">
+            <label for="email">Epost</label>
+            <input type="email" name="email" id="email" required />
+          </div>
+          <div class="form-control">
+            <label for="name">Namn</label>
+            <input type="text" name="name" id="name" required/>
+          </div>
+          <div class="form-control">
+            <label for="address">Adress</label>
+            <input type="text" name="address" id="address" required/>
+          </div>
+          <div class="form-control">
+            <label for="mobile">Mobilnummer</label>
+            <input type="tel" name="mobile" id="mobile" required/>
+          </div>
+          <button id="submit-login-btn" class="btn" type="submit">Logga in</button>
+          <button id="cancel-login-btn" class="btn" type="button">Avbryt</button>
+        </form>
+  `;
+  return div;
+}
