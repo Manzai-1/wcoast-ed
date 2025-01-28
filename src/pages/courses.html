@@ -32,6 +32,27 @@
       </nav>
     </header>
     <main>
+      <section class="course-form">
+        <h1>Sök bland kurser</h1>
+        <form id="search-form" class="new-course">
+          <div class="form-control">
+            <label for="search">Kursnamn</label>
+            <input type="text" name="title" id="title" />
+          </div>
+          <div class="form-control">
+            <label for="onSite">Visa kurser med klassrum</label>
+            <input type="checkbox" name="show-onSite" id="onSite" checked/>
+          </div>
+          <div class="form-control">
+            <label for="remote">Visa kurser med distans</label>
+            <input type="checkbox" name="show-remote" id="remote"checked/>
+          </div>
+          <div class="form-control">
+            <label for="remote">Visa endast populära kurser</label>
+            <input type="checkbox" name="show-popular" id="popular"/>
+          </div>
+        </form>
+      </section>
       <div class="course-list" id="course-list">
       </div>
     </main>
