@@ -1,8 +1,11 @@
 import { getData } from "./utils/http-services.js";
 import { createCourseDiv } from "./utils/dom.js";
+import { handleUserLogin, updateLoginStatusText } from "./utils/login.js";
+document.querySelector('#login-menu-item').addEventListener('click', handleUserLogin);
 const list = document.querySelector('#course-list');
 const initApp = () => {
     loadCourses();
+    updateLoginStatusText();
 };
 const loadCourses = async () => {
     const courses = await getData('http://localhost:3000/courses');

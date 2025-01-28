@@ -1,8 +1,10 @@
 import { getData, postData, updateData } from "./utils/http-services.js";
 import { mapFormToIUser } from "./utils/map-services.js";
+import { handleUserLogin, updateLoginStatusText } from "./utils/login.js";
+document.querySelector('#login-menu-item').addEventListener('click', handleUserLogin);
 const registerForm = document.querySelector('#user-registration-form');
 const initApp = () => {
-    const id = location.search.split('=')[1];
+    updateLoginStatusText();
 };
 const handleRegisterUser = async (e) => {
     e.preventDefault();

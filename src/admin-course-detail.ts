@@ -3,13 +3,16 @@ import { IRegistration } from "./models/IRegistration";
 import { createUserTable } from "./utils/dom.js";
 import { getData, updateData } from "./utils/http-services.js";
 import { mapFormToICourse } from "./utils/map-services.js";
+import { handleUserLogin, updateLoginStatusText } from "./utils/login.js";
 
+document.querySelector('#login-menu-item')!.addEventListener('click', handleUserLogin);
 const courseForm = document.querySelector<HTMLFormElement>('#update-course-form')!;
 
 const initApp = ()=>{
     const id:string = location.search.split('=')[1];
     loadCourseDetails(id);
     loadCourseCustomers(id);
+    updateLoginStatusText();
 }
 
 const loadCourseDetails = async(id:string)=>{

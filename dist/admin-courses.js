@@ -1,10 +1,13 @@
 import { mapFormToICourse } from "./utils/map-services.js";
 import { getData, postData } from "./utils/http-services.js";
 import { createCourseDiv } from "./utils/dom.js";
+import { handleUserLogin, updateLoginStatusText } from "./utils/login.js";
+document.querySelector('#login-menu-item').addEventListener('click', handleUserLogin);
 const form = document.querySelector('#new-course');
 const list = document.querySelector('#course-list');
 const initApp = () => {
     loadCourses();
+    updateLoginStatusText();
 };
 const handleSaveCourse = async (e) => {
     e.preventDefault();

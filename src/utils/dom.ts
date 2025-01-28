@@ -30,10 +30,8 @@ export const createCourseDetailDiv = (course:ICourse):HTMLDivElement => {
           ${createCourseDetailP('course-onsite','Klassrum',course.onSite)}
           ${createCourseDetailP('course-remote','Distans',course.remote)}
           ${createCourseDetailP('course-start-date','Startdatum',course.startDate)}
-          ${createCourseDetailP('course-cost','Pris',course.price)}
-          <a href="http://127.0.0.1:5500/src/pages/course-registration.html?id=${course.id}">  
-            <button class="register-button">Registrera</button>
-          </a>
+          ${createCourseDetailP('course-cost','Pris',course.price)} 
+          <button class="register-button">Registrera</button>
         </div>
         `;
   return div;
