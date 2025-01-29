@@ -7,5 +7,5 @@ export interface ICourse{
     remote: string;
     startDate: string;
     price: string;
-    imgUrl: string;
+    img: string;
 }

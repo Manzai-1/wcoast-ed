@@ -1,12 +1,13 @@
 import { mapFormToICourse } from "./utils/map-services.js";
 import { getData, postData } from "./utils/http-services.js";
-import { createCourseDiv } from "./utils/dom.js";
+import { createCourseDiv, createImageSelectDiv } from "./utils/dom.js";
 import { handleUserLogin, updateLoginStatusText } from "./utils/login.js";
 import { config } from "./config/config.js";
 document.querySelector('#login-menu-item').addEventListener('click', handleUserLogin);
 const form = document.querySelector('#new-course');
 const list = document.querySelector('#course-list');
 const initApp = () => {
+    addImgOptions();
     loadCourses();
     updateLoginStatusText();
 };
@@ -37,6 +38,18 @@ const clearForm = () => {
             input.value = '';
         }
     });
+    form.querySelector('select').selectedIndex = 0;
+};
+const addImgOptions = () => {
+    const div = createImageSelectDiv();
+    div.querySelector('#image-select')
+        .addEventListener('input', handleSelectImage);
+    form.querySelector('#course-form-options-div').appendChild(div);
+};
+const handleSelectImage = (e) => {
+    const imgSelect = e.target;
+    const prevImg = `${config.images.url}/${imgSelect.value}`;
+    document.querySelector('#selected-image').src = prevImg;
 };
 form.addEventListener('submit', handleSaveCourse);
 document.addEventListener('DOMContentLoaded', initApp);

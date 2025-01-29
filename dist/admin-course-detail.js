@@ -1,4 +1,4 @@
-import { createUserTable } from "./utils/dom.js";
+import { createImageSelectDiv, createUserTable } from "./utils/dom.js";
 import { getData, updateData } from "./utils/http-services.js";
 import { mapFormToICourse } from "./utils/map-services.js";
 import { handleUserLogin, updateLoginStatusText } from "./utils/login.js";
@@ -8,6 +8,7 @@ const courseForm = document.querySelector('#update-course-form');
 const initApp = () => {
     const id = location.search.split('=')[1];
     loadCourseDetails(id);
+    addImgOptions();
     loadCourseCustomers(id);
     updateLoginStatusText();
 };
@@ -29,6 +30,8 @@ const displayCourseDetails = (course) => {
         course.remote === 'Ja' ? true : false;
     document.querySelector('#startDate').value = course.startDate;
     document.querySelector('#price').value = course.price;
+    document.querySelector('#image-select').value = course.img;
+    updateImagePreview(course.img);
 };
 const displayCourseCustomers = (registry) => {
     const table = createUserTable(registry ? registry.users : []);
@@ -40,6 +43,20 @@ const handleCourseUpdate = async (e) => {
     const id = location.search.split('=')[1];
     const course = mapFormToICourse(new FormData(courseForm));
     updateData(`${config.endpoint.courses}/${id}`, course);
+};
+const addImgOptions = () => {
+    const div = createImageSelectDiv();
+    div.querySelector('#image-select')
+        .addEventListener('input', handleSelectImage);
+    courseForm.querySelector('#course-form-options-div').appendChild(div);
+};
+const handleSelectImage = (e) => {
+    const imgSelect = e.target;
+    updateImagePreview(imgSelect.value);
+};
+const updateImagePreview = (img) => {
+    document.querySelector('#selected-image').src =
+        `${config.images.url}/${img}`;
 };
 courseForm.addEventListener('submit', handleCourseUpdate);
 document.addEventListener('DOMContentLoaded', initApp);

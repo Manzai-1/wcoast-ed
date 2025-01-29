@@ -1,263 +1,27 @@
 {
   "courses": [
     {
-      "title": "javascript",
-      "courseNr": "123",
-      "lengthDays": "144",
-      "onSite": "Nej",
-      "remote": "Ja",
-      "startDate": "2025-03-01",
-      "price": "5000",
-      "imgUrl": "../../src/assets/images/no-img.png",
-      "id": "8b89"
-    },
-    {
-      "id": "343f",
-      "title": "javascript",
-      "courseNr": "123",
-      "lengthDays": "14",
-      "onSite": "Nej",
-      "remote": "Ja",
-      "startDate": "2025-03-01",
-      "price": "5000",
-      "imgUrl": "../../src/assets/images/no-img.png"
-    },
-    {
-      "title": "javascript",
-      "courseNr": "123",
-      "lengthDays": "14",
-      "onSite": "Ja",
-      "remote": "Ja",
-      "startDate": "2025-03-01",
-      "price": "5000",
-      "imgUrl": "../../src/assets/images/no-img.png",
-      "id": "2fd4"
-    },
-    {
-      "id": "83a2",
-      "title": "javascript",
-      "courseNr": "123",
-      "lengthDays": "14",
-      "onSite": "Nej",
-      "remote": "Ja",
-      "startDate": "2025-03-01",
-      "price": "5000",
-      "imgUrl": "../../src/assets/images/no-img.png"
-    },
-    {
-      "id": "9ba5",
-      "title": "javascript",
-      "courseNr": "123",
-      "lengthDays": "14",
-      "onSite": "Nej",
-      "remote": "Ja",
-      "startDate": "2025-03-01",
-      "price": "5000",
-      "imgUrl": "../../src/assets/images/no-img.png"
-    },
-    {
-      "id": "8a76",
-      "title": "javascript",
-      "courseNr": "123",
-      "lengthDays": "14",
-      "onSite": "Nej",
-      "remote": "Ja",
-      "startDate": "2025-03-01",
-      "price": "5000",
-      "imgUrl": "../../src/assets/images/no-img.png"
-    },
-    {
-      "id": "b6e2",
-      "title": "javascript",
-      "courseNr": "123",
-      "lengthDays": "14",
-      "onSite": "Nej",
-      "remote": "Ja",
-      "startDate": "2025-03-01",
-      "price": "5000",
-      "imgUrl": "../../src/assets/images/no-img.png"
-    },
-    {
-      "id": "f538",
-      "title": "javascript",
-      "courseNr": "123",
-      "lengthDays": "14",
-      "onSite": "Nej",
-      "remote": "Ja",
-      "startDate": "2025-03-01",
-      "price": "5000",
-      "imgUrl": "../../src/assets/images/no-img.png"
-    },
-    {
-      "id": "0215",
+      "id": "24f6",
       "title": "Typescript",
-      "courseNr": "123444",
+      "courseNr": "288",
       "lengthDays": "14",
       "onSite": "Ja",
-      "remote": "Ja",
-      "startDate": "2025-04-01",
-      "price": "2322",
-      "imgUrl": "../../src/assets/images/no-img.png"
+      "remote": "Nej",
+      "startDate": "2025-03-01",
+      "price": "5000",
+      "img": "javascript.png"
     },
     {
       "title": "HTML & CSS",
-      "courseNr": "2993",
-      "lengthDays": "14",
-      "onSite": "Nej",
-      "remote": "Ja",
-      "startDate": "2025-06-01",
-      "price": "0",
-      "imgUrl": "../../src/assets/images/no-img.png",
-      "id": "3ee5"
-    },
-    {
-      "title": "HTML & CSS",
-      "courseNr": "2993",
-      "lengthDays": "14",
-      "onSite": "Nej",
-      "remote": "Nej",
-      "startDate": "2025-06-01",
-      "price": "2333",
-      "imgUrl": "../../src/assets/images/no-img.png",
-      "id": "4ead"
-    },
-    {
-      "id": "fb2f",
-      "title": "HTML & CSS",
-      "courseNr": "2993",
-      "lengthDays": "14",
-      "onSite": "Nej",
-      "remote": "Nej",
-      "startDate": "2025-06-01",
-      "price": "2333",
-      "imgUrl": "../../src/assets/images/no-img.png"
-    },
-    {
-      "id": "1720",
-      "title": "Blockchain",
-      "courseNr": "2993",
-      "lengthDays": "14",
-      "onSite": "Nej",
-      "remote": "Nej",
-      "startDate": "2025-06-01",
-      "price": "2333",
-      "imgUrl": "../../src/assets/images/no-img.png"
-    },
-    {
-      "id": "1068",
-      "title": "Blockchain",
-      "courseNr": "2993",
-      "lengthDays": "14",
-      "onSite": "Nej",
-      "remote": "Nej",
-      "startDate": "2025-06-01",
-      "price": "2333",
-      "imgUrl": "../../src/assets/images/no-img.png"
-    },
-    {
-      "id": "d375",
-      "title": "Smart contracts",
-      "courseNr": "239000",
+      "courseNr": "123444",
       "lengthDays": "21",
       "onSite": "Ja",
       "remote": "Ja",
-      "startDate": "2025-08-01",
-      "price": "9999",
-      "imgUrl": "../../src/assets/images/no-img.png"
-    },
-    {
-      "id": "8e65",
-      "title": "javascript",
-      "courseNr": "123",
-      "lengthDays": "14",
-      "onSite": "Nej",
-      "remote": "Ja",
-      "startDate": "2025-03-01",
-      "price": "5000",
-      "imgUrl": "../../src/assets/images/no-img.png"
-    },
-    {
-      "id": "daba",
-      "title": "HTML & CSS",
-      "courseNr": "123",
-      "lengthDays": "213",
-      "onSite": "Ja",
-      "remote": "Ja",
-      "startDate": "1231",
-      "price": "2333",
-      "imgUrl": "../../src/assets/images/no-img.png"
+      "startDate": "2025-06-01",
+      "price": "1231",
+      "img": "html.png",
+      "id": "fa71"
     }
   ],
-  "registrations": [
-    {
-      "id": "343f",
-      "users": [
-        {
-          "id": "dawd@gmail.com",
-          "name": "pelle",
-          "address": "gatan 2",
-          "mobileNr": "073444444"
-        },
-        {
-          "id": "dawd@gmail.com",
-          "name": "pelle",
-          "address": "gatan 2",
-          "mobileNr": "073444444"
-        },
-        {
-          "id": "dawd@gmail.com",
-          "name": "pelle",
-          "address": "gatan 2",
-          "mobileNr": "073444444"
-        },
-        {
-          "id": "dawd@gmail.com",
-          "name": "pelle",
-          "address": "gatan 2",
-          "mobileNr": "073444444"
-        },
-        {
-          "id": "dawd@gmail.com",
-          "name": "pelle",
-          "address": "gatan 2",
-          "mobileNr": "073444444"
-        }
-      ]
-    },
-    {
-      "id": "8b89",
-      "users": [
-        {
-          "id": "dawd@gmail.com",
-          "name": "pelle",
-          "address": "gatan 2",
-          "mobileNr": "073444444"
-        },
-        {
-          "id": "dawd@gmail.com",
-          "name": "pelle",
-          "address": "gatan 2",
-          "mobileNr": "073444444"
-        },
-        {
-          "id": "dawd@gmail.com",
-          "name": "pelle",
-          "address": "gatan 2",
-          "mobileNr": "073444444"
-        },
-        {
-          "id": "dawd@gmail.com",
-          "name": "pelle",
-          "address": "gatan 2",
-          "mobileNr": "073444444"
-        },
-        {
-          "id": "dawd@gmail.com",
-          "name": "pelle",
-          "address": "gatan 2",
-          "mobileNr": "073444444"
-        }
-      ]
-    }
-  ]
+  "registrations": []
 }

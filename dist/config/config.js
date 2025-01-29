@@ -6,8 +6,15 @@ export const config = {
     localStorage: {
         key: 'user'
     },
-    assetUrl: {
-        img: '../../src/assets/images'
+    images: {
+        url: '../../src/assets/images/courses',
+        list: [
+            'default.png',
+            'blockchain.png',
+            'html.png',
+            'javascript.png',
+            'programming.png'
+        ]
     },
     pages: {
         courseDetail: 'http://127.0.0.1:5500/src/pages/course-detail.html',

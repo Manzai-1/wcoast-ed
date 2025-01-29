@@ -3,6 +3,8 @@ import { ICourse } from "../models/ICourse";
 import { IUser } from "../models/IUser";
 
 export const mapFormToICourse = (data:FormData):ICourse=>{
+    console.log(data.get('image'));
+
     return {
         title:      getString(data.get('title') as string),
         courseNr:   getNumber(data.get('courseNr') as string),
@@ -11,7 +13,7 @@ export const mapFormToICourse = (data:FormData):ICourse=>{
         remote:     getBool(data.get('remote') as string),
         startDate:  getNumber(data.get('startDate') as string),
         price:      getNumber(data.get('price') as string),
-        imgUrl:     `${config.assetUrl.img}/no-img.png`,
+        img:     `${data.get('img-select')}`
     };
 }
 

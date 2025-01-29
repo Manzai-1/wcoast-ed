@@ -1,5 +1,5 @@
-import { config } from "../config/config.js";
 export const mapFormToICourse = (data) => {
+    console.log(data.get('image'));
     return {
         title: getString(data.get('title')),
         courseNr: getNumber(data.get('courseNr')),
@@ -8,7 +8,7 @@ export const mapFormToICourse = (data) => {
         remote: getBool(data.get('remote')),
         startDate: getNumber(data.get('startDate')),
         price: getNumber(data.get('price')),
-        imgUrl: `${config.assetUrl.img}/no-img.png`,
+        img: `${data.get('img-select')}`
     };
 };
 export const mapFormToIUser = (data) => {

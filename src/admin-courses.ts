@@ -1,7 +1,7 @@
 import { ICourse } from "./models/ICourse";
 import { mapFormToICourse } from "./utils/map-services.js";
 import { getData, postData } from "./utils/http-services.js";
-import { createCourseDiv } from "./utils/dom.js";
+import { createCourseDiv, createImageSelectDiv } from "./utils/dom.js";
 import { handleUserLogin, updateLoginStatusText } from "./utils/login.js";
 import { config } from "./config/config.js";
 
@@ -10,6 +10,7 @@ const form:HTMLFormElement = document.querySelector<HTMLFormElement>('#new-cours
 const list = document.querySelector<HTMLDivElement>('#course-list')!;
 
 const initApp = ()=>{
+    addImgOptions();
     loadCourses();
     updateLoginStatusText();
 }
@@ -47,6 +48,21 @@ const clearForm = ()=>{
             input.value = '';
         }
     })
+
+    form.querySelector<HTMLSelectElement>('select')!.selectedIndex = 0;
+}
+
+const addImgOptions = ()=>{
+    const div = createImageSelectDiv();
+    div.querySelector<HTMLSelectElement>('#image-select')!
+        .addEventListener('input', handleSelectImage);
+    form.querySelector<HTMLDivElement>('#course-form-options-div')!.appendChild(div);
+}
+
+const handleSelectImage = (e:Event)=>{
+    const imgSelect = e.target as HTMLSelectElement;
+    const prevImg = `${config.images.url}/${imgSelect.value}`;
+    document.querySelector<HTMLImageElement>('#selected-image')!.src = prevImg;
 }
 
 form.addEventListener('submit',handleSaveCourse);

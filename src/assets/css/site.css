@@ -186,6 +186,17 @@ a {
   cursor: pointer; 
 }
 
+.options-div {
+  display: flex;
+  justify-content: space-between; 
+  margin-inline: 10%;
+}
+
+.image-option-div {
+  display: flex;
+  flex-direction: column;
+}
+
 /* course customer table */
 
 .customer-table {
