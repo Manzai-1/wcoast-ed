@@ -1,3 +1,4 @@
+import { config } from "./config/config.js";
 import { createCourseDetailDiv } from "./utils/dom.js";
 import { getData, postData, updateData } from "./utils/http-services.js";
 import { handleUserLogin, isUserLoggedIn, updateLoginStatusText } from "./utils/login.js";
@@ -10,7 +11,7 @@ const initApp = () => {
 };
 const loadCourseDetails = async () => {
     const id = location.search.split('=')[1];
-    const course = await getData(`http://localhost:3000/courses?id=${id}`);
+    const course = await getData(`${config.endpoint.courses}?id=${id}`);
     courseDetails.innerHTML = '';
     const courseDetailDiv = createCourseDetailDiv(course[0]);
     courseDetailDiv.querySelector('.register-button')
@@ -26,14 +27,14 @@ const registerCourse = async () => {
     updateCourseRegistry(id, user);
 };
 const updateCourseRegistry = async (id, user) => {
-    const registry = await getData(`http://localhost:3000/registrations?id=${id}`);
+    const registry = await getData(`${config.endpoint.registry}?id=${id}`);
     if (registry.length > 0) {
         registry[0].users.push(user);
-        updateData(`http://localhost:3000/registrations/${id}`, registry[0]);
+        updateData(`${config.endpoint.registry}/${id}`, registry[0]);
     }
     else {
         const newRegistry = { id: id, users: [user] };
-        postData('http://localhost:3000/registrations', newRegistry);
+        postData(`${config.endpoint.registry}`, newRegistry);
     }
 };
 document.addEventListener('DOMContentLoaded', initApp);

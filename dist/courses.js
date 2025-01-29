@@ -2,6 +2,7 @@ import { getData } from "./utils/http-services.js";
 import { createCourseDiv } from "./utils/dom.js";
 import { handleUserLogin, updateLoginStatusText } from "./utils/login.js";
 import { filterCourses } from "./utils/filter-services.js";
+import { config } from "./config/config.js";
 document.querySelector('#login-menu-item').addEventListener('click', handleUserLogin);
 const searchForm = document.querySelector('#search-form');
 const list = document.querySelector('#course-list');
@@ -10,13 +11,13 @@ const initApp = () => {
     updateLoginStatusText();
 };
 const loadCourses = async () => {
-    const courses = await getData('http://localhost:3000/courses');
+    const courses = await getData(config.endpoint.courses);
     return courses;
 };
 const displayCourses = (courses) => {
     list.innerHTML = '';
     courses.forEach((course) => {
-        const div = createCourseDiv(course, `http://127.0.0.1:5500/src/pages/course-detail.html?id=${course.id}`);
+        const div = createCourseDiv(course, `${config.pages.courseDetail}?id=${course.id}`);
         list.appendChild(div);
     });
 };

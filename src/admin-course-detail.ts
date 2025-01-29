@@ -4,6 +4,7 @@ import { createUserTable } from "./utils/dom.js";
 import { getData, updateData } from "./utils/http-services.js";
 import { mapFormToICourse } from "./utils/map-services.js";
 import { handleUserLogin, updateLoginStatusText } from "./utils/login.js";
+import { config } from "./config/config.js";
 
 document.querySelector('#login-menu-item')!.addEventListener('click', handleUserLogin);
 const courseForm = document.querySelector<HTMLFormElement>('#update-course-form')!;
@@ -16,12 +17,12 @@ const initApp = ()=>{
 }
 
 const loadCourseDetails = async(id:string)=>{
-    const course:ICourse[] = await getData(`http://localhost:3000/courses?id=${id}`);
+    const course:ICourse[] = await getData(`${config.endpoint.courses}?id=${id}`);
     displayCourseDetails(course[0]);
 }
 
 const loadCourseCustomers = async(id:string)=>{
-    const registry:IRegistration[] = await getData(`http://localhost:3000/registrations?id=${id}`);
+    const registry:IRegistration[] = await getData(`${config.endpoint.registry}?id=${id}`);
     displayCourseCustomers(registry[0]);
 }
 
@@ -48,7 +49,7 @@ const handleCourseUpdate = async(e:SubmitEvent)=>{
     const id:string = location.search.split('=')[1];
 
     const course:ICourse = mapFormToICourse(new FormData(courseForm));
-    updateData(`http://localhost:3000/courses/${id}`, course);
+    updateData(`${config.endpoint.courses}/${id}`, course);
 }
 
 courseForm.addEventListener('submit', handleCourseUpdate);

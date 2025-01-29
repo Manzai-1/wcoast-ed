@@ -3,6 +3,7 @@ import { getData } from "./utils/http-services.js";
 import { createCourseDiv } from "./utils/dom.js";
 import { handleUserLogin, updateLoginStatusText } from "./utils/login.js";
 import { filterCourses } from "./utils/filter-services.js";
+import { config } from "./config/config.js";
 
 
 document.querySelector('#login-menu-item')!.addEventListener('click', handleUserLogin);
@@ -16,7 +17,7 @@ const initApp = ()=>{
 }
 
 const loadCourses = async():Promise<ICourse[]>=>{
-    const courses:ICourse[] = await getData('http://localhost:3000/courses');
+    const courses:ICourse[] = await getData(config.endpoint.courses);
     return courses;
 }
 
@@ -24,7 +25,7 @@ const displayCourses = (courses: ICourse[])=>{
     list.innerHTML = '';
     courses.forEach((course)=>{
         const div:HTMLDivElement = createCourseDiv(course, 
-            `http://127.0.0.1:5500/src/pages/course-detail.html?id=${course.id}`
+            `${config.pages.courseDetail}?id=${course.id}`
         );
         list.appendChild(div);
     });

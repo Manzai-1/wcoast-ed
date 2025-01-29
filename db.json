@@ -175,6 +175,17 @@
       "startDate": "2025-03-01",
       "price": "5000",
       "imgUrl": "../../src/assets/images/no-img.png"
+    },
+    {
+      "id": "daba",
+      "title": "HTML & CSS",
+      "courseNr": "123",
+      "lengthDays": "213",
+      "onSite": "Ja",
+      "remote": "Ja",
+      "startDate": "1231",
+      "price": "2333",
+      "imgUrl": "../../src/assets/images/no-img.png"
     }
   ],
   "registrations": [
@@ -216,6 +227,12 @@
     {
       "id": "8b89",
       "users": [
+        {
+          "id": "dawd@gmail.com",
+          "name": "pelle",
+          "address": "gatan 2",
+          "mobileNr": "073444444"
+        },
         {
           "id": "dawd@gmail.com",
           "name": "pelle",

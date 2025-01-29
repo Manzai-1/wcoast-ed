@@ -3,6 +3,7 @@ import { mapFormToICourse } from "./utils/map-services.js";
 import { getData, postData } from "./utils/http-services.js";
 import { createCourseDiv } from "./utils/dom.js";
 import { handleUserLogin, updateLoginStatusText } from "./utils/login.js";
+import { config } from "./config/config.js";
 
 document.querySelector('#login-menu-item')!.addEventListener('click', handleUserLogin);
 const form:HTMLFormElement = document.querySelector<HTMLFormElement>('#new-course')!;
@@ -17,14 +18,14 @@ const handleSaveCourse = async(e: SubmitEvent):Promise<void>=>{
     e.preventDefault();
 
     const course:ICourse = mapFormToICourse(new FormData(form));
-    postData('http://localhost:3000/courses', course);
+    postData(config.endpoint.courses, course);
 
     clearForm();
     loadCourses();
 }
 
 const loadCourses = async()=>{
-    const courses:ICourse[] = await getData('http://localhost:3000/courses');
+    const courses:ICourse[] = await getData(config.endpoint.courses);
     displayCourses(courses);
 }
 
@@ -32,7 +33,7 @@ const displayCourses = (courses: ICourse[])=>{
     list.innerHTML = '';
     courses.forEach((course)=>{
         const div:HTMLDivElement = createCourseDiv(course, 
-            `http://127.0.0.1:5500/src/pages/admin-course-detail.html?id=${course.id}`
+            `${config.pages.adminCourseDetail}?id=${course.id}`
         );
         list.appendChild(div);
     });

@@ -1,3 +1,4 @@
+import { config } from '../config/config.js';
 import { ICourse } from '../models/ICourse';
 import { IRegistration } from '../models/IRegistration';
 import { getData } from './http-services.js';
@@ -26,7 +27,7 @@ export const filterCourses = async(
 };
 
 const getCourseUserCount = async(id:string):Promise<number>=>{
-    const registry:IRegistration[] = await getData(`http://localhost:3000/registrations?id=${id}`);
+    const registry:IRegistration[] = await getData(`${config.endpoint.registry}?id=${id}`);
     const count:number = registry.length > 0 ? registry[0].users.length : 0;
     return count;
 }
