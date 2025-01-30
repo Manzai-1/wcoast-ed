@@ -5,7 +5,7 @@ import { getData, updateData } from "./utils/http-services.js";
 import { mapFormToICourse } from "./utils/map-services.js";
 import { handleUserLogin, updateLoginStatusText } from "./utils/login.js";
 import { config } from "./config/config.js";
-import { addImgOptions, updateImagePreview } from "./utils/course-services.js";
+import { addImgOptions, displayMessage, getUrlID, updateImagePreview } from "./utils/course-services.js";
 
 document.querySelector('#login-menu-item')!.addEventListener('click', handleUserLogin);
 const courseForm = document.querySelector<HTMLFormElement>('#update-course-form')!;
@@ -55,6 +55,11 @@ const handleCourseUpdate = async(e:SubmitEvent)=>{
 
     const course:ICourse = mapFormToICourse(new FormData(courseForm));
     updateData(`${config.endpoint.courses}/${id}`, course);
+
+    displayMessage(
+        'Kurs Uppdaterad',
+        course.title,
+        `${config.pages.adminCourseDetail}?id=${getUrlID()}`);
 }
 
 courseForm.addEventListener('submit', handleCourseUpdate);

@@ -1,5 +1,5 @@
 import { config } from "./config/config.js";
-import { getUrlID } from "./utils/course-services.js";
+import { displayMessage, getUrlID } from "./utils/course-services.js";
 import { createCourseDetailDiv } from "./utils/dom.js";
 import { getData, postData, updateData } from "./utils/http-services.js";
 import { handleUserLogin, isUserLoggedIn, updateLoginStatusText } from "./utils/login.js";
@@ -21,6 +21,7 @@ const loadCourseDetails = async () => {
 const registerCourse = async () => {
     const user = getLoginFromStorage();
     updateCourseRegistry(getUrlID(), user);
+    displayMessage('Registrering klar', '', config.pages.courses);
 };
 const updateCourseRegistry = async (id, user) => {
     const registry = await getData(`${config.endpoint.registry}?id=${id}`);

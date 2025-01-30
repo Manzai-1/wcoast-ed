@@ -135,3 +135,22 @@ export const createLoginDiv = ():HTMLDivElement=>{
   `;
   return div;
 }
+
+export const createMessageDiv = (
+  msgHead:string, 
+  msgBody:string, 
+  forwardUrl:string
+):HTMLDivElement=>{
+  const div = document.createElement('div');
+  div.id = '#login-div';
+  div.classList.add('course-form');
+  div.classList.add('popup');
+  div.innerHTML = `
+          <h1>${msgHead}</h1>
+          <p>${msgBody}</p>
+          <a href="${forwardUrl}">
+            <button class="btn">Ok</button>
+          </a>
+  `;
+  return div;
+}

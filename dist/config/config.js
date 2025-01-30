@@ -17,7 +17,9 @@ export const config = {
         ]
     },
     pages: {
-        courseDetail: 'http://127.0.0.1:5500/src/pages/course-detail.html',
-        adminCourseDetail: 'http://127.0.0.1:5500/src/pages/admin-course-detail.html'
+        courseDetail: './course-detail.html',
+        courses: './courses.html',
+        adminCourseDetail: './admin-course-detail.html',
+        adminCourses: './admin-courses.html'
     }
 };

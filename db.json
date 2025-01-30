@@ -1,7 +1,6 @@
 {
   "courses": [
     {
-      "id": "24f6",
       "title": "Typescript",
       "courseNr": "288",
       "lengthDays": "14",
@@ -9,7 +8,8 @@
       "remote": "Nej",
       "startDate": "2025-03-01",
       "price": "5000",
-      "img": "javascript.png"
+      "img": "javascript.png",
+      "id": "24f6"
     },
     {
       "title": "HTML & CSS",
@@ -21,6 +21,61 @@
       "price": "1231",
       "img": "html.png",
       "id": "fa71"
+    },
+    {
+      "id": "f12d",
+      "title": "javascript",
+      "courseNr": "239000",
+      "lengthDays": "14",
+      "onSite": "Ja",
+      "remote": "Nej",
+      "startDate": "2025-08-01",
+      "price": "1231",
+      "img": "javascript.png"
+    },
+    {
+      "id": "db33",
+      "title": "javascript2",
+      "courseNr": "239000",
+      "lengthDays": "14",
+      "onSite": "Ja",
+      "remote": "Nej",
+      "startDate": "2025-08-01",
+      "price": "1231",
+      "img": "javascript.png"
+    },
+    {
+      "title": "Smart contracts",
+      "courseNr": "2993",
+      "lengthDays": "21",
+      "onSite": "Nej",
+      "remote": "Ja",
+      "startDate": "2025-04-01",
+      "price": "2333",
+      "img": "programming.png",
+      "id": "77a7"
+    },
+    {
+      "id": "ca81",
+      "title": "Blockchain",
+      "courseNr": "288",
+      "lengthDays": "213",
+      "onSite": "Ja",
+      "remote": "Ja",
+      "startDate": "2025-08-01",
+      "price": "2322",
+      "img": "blockchain.png"
+    },
+    {
+      "id": "e1eb",
+      "title": "Blockchain2",
+      "courseNr": "288",
+      "lengthDays": "213",
+      "onSite": "Ja",
+      "remote": "Ja",
+      "startDate": "2025-08-01",
+      "price": "2322",
+      "img": "default.png"
     }
   ],
   "registrations": [
@@ -40,6 +95,17 @@
       "users": [
         {
           "id": "dawd@gmail.com",
+          "name": "pelle",
+          "address": "gatan 2",
+          "mobileNr": "073444444"
+        }
+      ]
+    },
+    {
+      "id": "f12d",
+      "users": [
+        {
+          "id": "pelle@gmail.com",
           "name": "pelle",
           "address": "gatan 2",
           "mobileNr": "073444444"
