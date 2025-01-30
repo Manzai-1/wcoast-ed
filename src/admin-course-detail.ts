@@ -1,10 +1,11 @@
 import { ICourse } from "./models/ICourse";
 import { IRegistration } from "./models/IRegistration";
-import { createImageSelectDiv, createUserTable } from "./utils/dom.js";
+import { createUserTable } from "./utils/dom.js";
 import { getData, updateData } from "./utils/http-services.js";
 import { mapFormToICourse } from "./utils/map-services.js";
 import { handleUserLogin, updateLoginStatusText } from "./utils/login.js";
 import { config } from "./config/config.js";
+import { addImgOptions, updateImagePreview } from "./utils/course-services.js";
 
 document.querySelector('#login-menu-item')!.addEventListener('click', handleUserLogin);
 const courseForm = document.querySelector<HTMLFormElement>('#update-course-form')!;
@@ -55,24 +56,6 @@ const handleCourseUpdate = async(e:SubmitEvent)=>{
     const course:ICourse = mapFormToICourse(new FormData(courseForm));
     updateData(`${config.endpoint.courses}/${id}`, course);
 }
-
-const addImgOptions = ()=>{
-    const div = createImageSelectDiv();
-    div.querySelector<HTMLSelectElement>('#image-select')!
-        .addEventListener('input', handleSelectImage);
-    courseForm.querySelector<HTMLDivElement>('#course-form-options-div')!.appendChild(div);
-}
-
-const handleSelectImage = (e:Event)=>{
-    const imgSelect = e.target as HTMLSelectElement;
-    updateImagePreview(imgSelect.value);
-}
-
-const updateImagePreview = (img:string)=>{
-    document.querySelector<HTMLImageElement>('#selected-image')!.src = 
-        `${config.images.url}/${img}`;
-}
-
 
 courseForm.addEventListener('submit', handleCourseUpdate);
 document.addEventListener('DOMContentLoaded', initApp);

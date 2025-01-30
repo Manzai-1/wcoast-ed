@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400;900&family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,800;1,200;1,400;1,500;1,600&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #00796b;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+}
+
+
+footer {
+  text-align: center;
+  background: #444;
+  color: #fff;
+  padding: 0.4rem;
+}
+
+main {
+  padding: 1rem;
+}
+
+.course-form.image-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+
+.image-link-wrapper {
+  text-align: center;
+}
+
+.image-link {
+  width: 220px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-link:hover {
+  transform: scale(1.07);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.image-title {
+  font-size: 1.3rem;
+  color: #004d40;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.course-form.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  width: 320px;
+}
+
+.course-list {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 15px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.course {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  transition: background 0.3s ease;
+}
+
+.course:hover {
+  background: #e3f2fd;
+  cursor: pointer;
+}
+
+.course-image {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-right: 20px;
+}
+
+.course-img-title {
+  font-size: 1.3rem;
+  color: #004d40;
+}
+
+.course-form {
+  max-width: 650px;
+  margin: 30px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.course-form h1 {
+  font-size: 2rem;
+  text-align: center;
+  color: #004d40;
+}
+
+.form-control label {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.form-control input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.register-button {
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  background: #007BFF;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.register-button:hover {
+  background: #0056b3;
+}
+
+/* Navigation */
+header {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  opacity: 0.9;
+  background: #004d40;
+}
+
+nav {
+  padding: 0 1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li.logo {
+  font-size: 1.6rem;
+}
+
+nav ul li.logo span {
+  color: #00796b;
+  /* color: #2196f3; */
+}
+
+nav ul li.toggle {
+  order: 1;
+}
+
+nav ul li.menu-item {
+  display: none;
+  width: 100%;
+  text-align: center;
+  order: 2;
+}
+
+nav ul li a {
+  display: block;
+  padding: 0.4rem 0.4rem;
+  color: #fff;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #ef6c00;
+}
+
+nav ul:has(li .menu-btn:checked) .menu-item {
+  display: block;
+}
+
+/* Draw the hamburger menu */
+nav ul li .menu-btn {
+  display: none;
+}
+
+nav ul li .menu-icon {
+  padding: 28px 20px;
+  cursor: pointer;
+}
+
+nav ul li .menu-icon .nav-icon {
+  background-color: #fff;
+  display: block;
+  height: 2px;
+  width: 18px;
+  position: relative;
+  transition: background-color 0.2s ease-out;
+}
+
+nav ul li .menu-icon .nav-icon:before,
+nav ul li .menu-icon .nav-icon:after {
+  background-color: #fff;
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+}
+
+nav ul .menu-icon .nav-icon:before {
+  top: -5px;
+}
+
+nav ul li .menu-icon .nav-icon:after {
+  top: 5px;
+}
+
+/* Animate the hamburger menu */
+nav ul li .menu-btn:checked ~ .menu-icon .nav-icon {
+  background: transparent;
+}
+
+nav ul li .menu-btn:checked ~ .menu-icon .nav-icon::before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+nav ul li .menu-btn:checked ~ .menu-icon .nav-icon::after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+/* MEDIA QUERIES */
+/* min-width: 768px */
+@media (min-width: 768px) {
+  section p {
+    font-size: 1rem;
+  }
+
+  section i {
+    font-size: 1.3rem;
+  }
+
+  nav ul {
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  nav ul li.menu-item {
+    display: block;
+    width: auto;
+  }
+
+  nav ul li.logo {
+    flex: 1;
+  }
+
+  nav ul li.toggle {
+    display: none;
+  }
+
+
+  #course-form {
+    max-width: 600px;
+    margin: auto;
+  }
+
+  .btn {
+    font-size: 1rem;
+  }
+}
+

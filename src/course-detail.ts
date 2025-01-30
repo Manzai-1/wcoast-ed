@@ -2,6 +2,7 @@ import { config } from "./config/config.js";
 import { ICourse } from "./models/ICourse";
 import { IRegistration } from "./models/IRegistration";
 import { IUser } from "./models/IUser";
+import { getUrlID } from "./utils/course-services.js";
 import { createCourseDetailDiv } from "./utils/dom.js";
 import { getData, postData, updateData } from "./utils/http-services.js";
 import { handleUserLogin, isUserLoggedIn, updateLoginStatusText } from "./utils/login.js";
@@ -16,8 +17,7 @@ const initApp = ()=>{
 }
 
 const loadCourseDetails = async()=>{
-    const id:string = location.search.split('=')[1];
-    const course:ICourse[] = await getData(`${config.endpoint.courses}?id=${id}`);
+    const course:ICourse[] = await getData(`${config.endpoint.courses}?id=${getUrlID()}`);
     courseDetails.innerHTML = '';
     const courseDetailDiv:HTMLDivElement = createCourseDetailDiv(course[0]);
     courseDetailDiv.querySelector('.register-button')!
@@ -25,14 +25,9 @@ const loadCourseDetails = async()=>{
     courseDetails.appendChild(courseDetailDiv);
 }
 
-const handleRegisterCourse = (e:Event)=>{
-    isUserLoggedIn() ? registerCourse() : handleUserLogin();
-}
-
 const registerCourse = async()=>{
-    const id:string = location.search.split('=')[1];
     const user = getLoginFromStorage() as IUser;
-    updateCourseRegistry(id, user);
+    updateCourseRegistry(getUrlID(), user);
 }
 
 const updateCourseRegistry = async(id:string, user:IUser)=>{
@@ -45,6 +40,10 @@ const updateCourseRegistry = async(id:string, user:IUser)=>{
         const newRegistry:IRegistration = { id: id, users: [user] }
         postData(`${config.endpoint.registry}`, newRegistry);
     }
+}
+
+const handleRegisterCourse = (e:Event)=>{
+    isUserLoggedIn() ? registerCourse() : handleUserLogin();
 }
 
 document.addEventListener('DOMContentLoaded', initApp);

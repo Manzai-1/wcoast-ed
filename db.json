@@ -23,5 +23,28 @@
       "id": "fa71"
     }
   ],
-  "registrations": []
+  "registrations": [
+    {
+      "id": "24f6",
+      "users": [
+        {
+          "id": "dawd@gmail.com",
+          "name": "pelle",
+          "address": "gatan 2",
+          "mobileNr": "073444444"
+        }
+      ]
+    },
+    {
+      "id": "fa71",
+      "users": [
+        {
+          "id": "dawd@gmail.com",
+          "name": "pelle",
+          "address": "gatan 2",
+          "mobileNr": "073444444"
+        }
+      ]
+    }
+  ]
 }
