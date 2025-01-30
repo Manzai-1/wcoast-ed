@@ -209,8 +209,62 @@ a {
 }
 
 /* course customer table */
-
 .customer-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.customer-table th, 
+.customer-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.customer-table th {
+  background-color: #444752;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 15px;
+}
+
+.customer-table td {
+  background-color: #fafafa;
+  color: #333;
+}
+
+.customer-table tr:nth-child(even) td {
+  background-color: #f5f5f5;
+}
+
+.customer-table tr:last-child td {
+  border-bottom: none;
+}
+
+.customer-table tr:hover td {
+  background-color: #e6f7ff;
+}
+
+/* Rounded corners for the first and last cells */
+.customer-table th:first-child,
+.customer-table td:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.customer-table th:last-child,
+.customer-table td:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+/* .customer-table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed; 
@@ -242,7 +296,7 @@ a {
 
 .customer-table tr:hover td {
   background-color: #ffffff; 
-}
+} */
 
 /* Course detail */
 
@@ -260,6 +314,7 @@ a {
   width: 150px;
   height: 150px;
   object-fit: cover;
+  border: 3px solid #444752;
   border-radius: 10px;
 }
 

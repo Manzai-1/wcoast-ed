@@ -25,10 +25,8 @@ const displayCourseDetails = (course) => {
     document.querySelector('#title').value = course.title;
     document.querySelector('#courseNr').value = course.courseNr;
     document.querySelector('#lengthDays').value = course.lengthDays;
-    document.querySelector('#onSite').checked =
-        course.onSite === 'Ja' ? true : false;
-    document.querySelector('#remote').checked =
-        course.remote === 'Ja' ? true : false;
+    document.querySelector('#onSite').checked = course.onSite;
+    document.querySelector('#remote').checked = course.remote;
     document.querySelector('#startDate').value = course.startDate;
     document.querySelector('#price').value = course.price;
     document.querySelector('#image-select').value = course.img;
@@ -41,9 +39,8 @@ const displayCourseCustomers = (registry) => {
 };
 const handleCourseUpdate = async (e) => {
     e.preventDefault();
-    const id = location.search.split('=')[1];
     const course = mapFormToICourse(new FormData(courseForm));
-    updateData(`${config.endpoint.courses}/${id}`, course);
+    updateData(`${config.endpoint.courses}/${getUrlID()}`, course);
     displayMessage('Kurs Uppdaterad', course.title, `${config.pages.adminCourseDetail}?id=${getUrlID()}`);
 };
 courseForm.addEventListener('submit', handleCourseUpdate);

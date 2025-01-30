@@ -3,8 +3,8 @@ export interface ICourse{
     title: string;
     courseNr: string;
     lengthDays: string;
-    onSite: string;
-    remote: string;
+    onSite: boolean;
+    remote: boolean;
     startDate: string;
     price: string;
     img: string;

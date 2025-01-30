@@ -1,26 +1,23 @@
 import { config } from '../config/config.js';
 import { ICourse } from '../models/ICourse';
+import { IFilter } from '../models/IFilter.js';
 import { IRegistration } from '../models/IRegistration';
 import { getData } from './http-services.js';
 
 export const filterCourses = async(
     courses: ICourse[],
-    filterTitle: string,
-    showOnSite: boolean,
-    showRemote: boolean,
-    showPopular: boolean
+    filter:IFilter
     ):Promise<ICourse[]> => {
     const filterCourses: ICourse[] = [];
-    
+    console.log(filter);
     for(const course of courses) {
         let include = true;
 
-        if(filterTitle) include = course.title.toLowerCase().
-            includes(filterTitle.toLocaleLowerCase());
-
-        if(include && !showOnSite) include = course.onSite === 'Nej' ? true : false;
-        if(include && !showRemote) include = course.remote === 'Nej' ? true : false;
-        if(include && showPopular) include =  await getCourseUserCount(course.id!) >= 3 ? true:false;
+        if(filter.title) include = course.title.toLowerCase().
+            includes(filter.title.toLocaleLowerCase());
+        if(include && !filter.onSite) include = course.onSite ? false : true;
+        if(include && !filter.remote) include = course.remote ? false : true;
+        if(include && filter.popular) include =  await getCourseUserCount(course.id!) >= 3 ? true:false;
         if(include) filterCourses.push(course);
     }
     return filterCourses;

@@ -3,9 +3,9 @@
     {
       "title": "Typescript",
       "courseNr": "288",
-      "lengthDays": "14",
-      "onSite": "Ja",
-      "remote": "Nej",
+      "lengthDays": "144",
+      "onSite": false,
+      "remote": true,
       "startDate": "2025-03-01",
       "price": "5000",
       "img": "javascript.png",
@@ -34,15 +34,15 @@
       "img": "javascript.png"
     },
     {
-      "id": "db33",
       "title": "javascript2",
       "courseNr": "239000",
       "lengthDays": "14",
-      "onSite": "Ja",
-      "remote": "Nej",
+      "onSite": true,
+      "remote": true,
       "startDate": "2025-08-01",
       "price": "1231",
-      "img": "javascript.png"
+      "img": "javascript.png",
+      "id": "db33"
     },
     {
       "title": "Smart contracts",
@@ -87,6 +87,30 @@
           "name": "pelle",
           "address": "gatan 2",
           "mobileNr": "073444444"
+        },
+        {
+          "id": "pelle@gmail.com",
+          "name": "pelle",
+          "address": "gatan 2",
+          "mobileNr": "073444444"
+        },
+        {
+          "id": "pelle@gmail.com",
+          "name": "pelle",
+          "address": "gatan 2",
+          "mobileNr": "073444444"
+        },
+        {
+          "id": "pelle@gmail.com",
+          "name": "pelle",
+          "address": "gatan 2",
+          "mobileNr": "073444444"
+        },
+        {
+          "id": "dawd@gmail.com",
+          "name": "pelle",
+          "address": "gatan 2",
+          "mobileNr": "073444444"
         }
       ]
     },
@@ -106,6 +130,28 @@
       "users": [
         {
           "id": "pelle@gmail.com",
+          "name": "pelle",
+          "address": "gatan 2",
+          "mobileNr": "073444444"
+        }
+      ]
+    },
+    {
+      "id": "ca81",
+      "users": [
+        {
+          "id": "dawd@gmail.com",
+          "name": "pelle",
+          "address": "gatan 2",
+          "mobileNr": "073444444"
+        }
+      ]
+    },
+    {
+      "id": "db33",
+      "users": [
+        {
+          "id": "dawd@gmail.com",
           "name": "pelle",
           "address": "gatan 2",
           "mobileNr": "073444444"

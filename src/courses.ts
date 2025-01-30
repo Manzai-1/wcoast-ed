@@ -4,10 +4,11 @@ import { handleUserLogin, updateLoginStatusText } from "./utils/login.js";
 import { filterCourses } from "./utils/filter-services.js";
 import { config } from "./config/config.js";
 import { displayCourses } from "./utils/course-services.js";
+import { mapFormToIFilter } from "./utils/map-services.js";
 
 
 document.querySelector('#login-menu-item')!.addEventListener('click', handleUserLogin);
-const searchForm = document.querySelector('#search-form')!;
+const searchForm = document.querySelector<HTMLFormElement>('#search-form')!;
 
 const initApp = ()=>{
     loadCourses().then((courses:ICourse[]) => displayCourses(courses, config.pages.courseDetail));
@@ -20,12 +21,10 @@ const loadCourses = async():Promise<ICourse[]>=>{
 }
 
 const handleSearchInput = async(e:Event)=>{
-    const title:string = document.querySelector<HTMLInputElement>('#title')!.value;
-    const onSite:boolean = document.querySelector<HTMLInputElement>('#onSite')!.checked;
-    const remote:boolean = document.querySelector<HTMLInputElement>('#remote')!.checked;
-    const popular:boolean = document.querySelector<HTMLInputElement>('#popular')!.checked;
-
-    const courses:ICourse[] = await filterCourses(await loadCourses(), title, onSite, remote, popular)
+    const data = new FormData(searchForm);
+    const courses:ICourse[] = await filterCourses(
+        await loadCourses(), 
+        mapFormToIFilter(data));
     displayCourses(courses, config.pages.courseDetail);
 }
 

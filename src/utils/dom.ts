@@ -25,13 +25,13 @@ export const createCourseDetailDiv = (course:ICourse):HTMLDivElement => {
   div.innerHTML = `
     <img src="${config.images.url}/${course.img}" alt="${course.title}" class="course-image">
         <div class="course-info">
-          <h2 id="course-title" class="course-title">${course.title}</h2>
-          ${createCourseDetailP('course-number','Kurs Nummer',course.courseNr)}
-          ${createCourseDetailP('course-length','Kurslängd',course.lengthDays)}
-          ${createCourseDetailP('course-onsite','Klassrum',course.onSite)}
-          ${createCourseDetailP('course-remote','Distans',course.remote)}
-          ${createCourseDetailP('course-start-date','Startdatum',course.startDate)}
-          ${createCourseDetailP('course-cost','Pris',course.price)} 
+          <h2 id="course-title" class="course-title">${           course.title}</h2>
+          ${createCourseDetailP('course-number','Kurs Nummer',    course.courseNr)}
+          ${createCourseDetailP('course-length','Kurslängd' ,     course.lengthDays)}
+          ${createCourseDetailP('course-onsite','Klassrum',       course.onSite ? 'Ja' : 'Nej')}
+          ${createCourseDetailP('course-remote','Distans',        course.remote ? 'Ja' : 'Nej')}
+          ${createCourseDetailP('course-start-date','Startdatum', course.startDate)}
+          ${createCourseDetailP('course-cost','Pris',             course.price)} 
           <button class="register-button">Registrera</button>
         </div>
         `;

@@ -32,10 +32,8 @@ const displayCourseDetails = (course:ICourse)=>{
     document.querySelector<HTMLInputElement>('#title')!.value = course.title;
     document.querySelector<HTMLInputElement>('#courseNr')!.value = course.courseNr;
     document.querySelector<HTMLInputElement>('#lengthDays')!.value = course.lengthDays;
-    document.querySelector<HTMLInputElement>('#onSite')!.checked = 
-        course.onSite === 'Ja' ? true:false;
-    document.querySelector<HTMLInputElement>('#remote')!.checked = 
-        course.remote === 'Ja' ? true:false;
+    document.querySelector<HTMLInputElement>('#onSite')!.checked = course.onSite;
+    document.querySelector<HTMLInputElement>('#remote')!.checked = course.remote;
     document.querySelector<HTMLInputElement>('#startDate')!.value = course.startDate;
     document.querySelector<HTMLInputElement>('#price')!.value = course.price;
     document.querySelector<HTMLSelectElement>('#image-select')!.value = course.img;
@@ -51,10 +49,9 @@ const displayCourseCustomers = (registry:IRegistration)=>{
 
 const handleCourseUpdate = async(e:SubmitEvent)=>{
     e.preventDefault();
-    const id:string = location.search.split('=')[1];
 
     const course:ICourse = mapFormToICourse(new FormData(courseForm));
-    updateData(`${config.endpoint.courses}/${id}`, course);
+    updateData(`${config.endpoint.courses}/${getUrlID()}`, course);
 
     displayMessage(
         'Kurs Uppdaterad',

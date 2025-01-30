@@ -1,30 +1,31 @@
 export const mapFormToICourse = (data) => {
-    console.log(data.get('image'));
     return {
-        title: getString(data.get('title')),
-        courseNr: getNumber(data.get('courseNr')),
-        lengthDays: getNumber(data.get('lengthDays')),
-        onSite: getBool(data.get('onSite')),
-        remote: getBool(data.get('remote')),
-        startDate: getNumber(data.get('startDate')),
-        price: getNumber(data.get('price')),
+        title: mapNull(data.get('title'), 'N/A'),
+        courseNr: mapNull(data.get('courseNr'), 'N/A'),
+        lengthDays: mapNull(data.get('lengthDays'), 'N/A'),
+        startDate: mapNull(data.get('startDate'), 'N/A'),
+        price: mapNull(data.get('price'), 'N/A'),
+        onSite: data.get('onSite') ? true : false,
+        remote: data.get('remote') ? true : false,
         img: `${data.get('img-select')}`
     };
 };
 export const mapFormToIUser = (data) => {
     return {
-        id: getString(data.get('email')),
-        name: getString(data.get('name')),
-        address: getString(data.get('address')),
-        mobileNr: getString(data.get('mobile')),
+        id: mapNull(data.get('email')),
+        name: mapNull(data.get('name')),
+        address: mapNull(data.get('address')),
+        mobileNr: mapNull(data.get('mobile')),
     };
 };
-const getString = (str) => {
-    return str ? str : '';
+export const mapFormToIFilter = (data) => {
+    return {
+        title: mapNull(data.get('title')),
+        onSite: data.get('onSite') ? true : false,
+        remote: data.get('remote') ? true : false,
+        popular: data.get('popular') ? true : false,
+    };
 };
-const getNumber = (nr) => {
-    return nr ? nr : '0';
-};
-const getBool = (str) => {
-    return str ? 'Ja' : 'Nej';
+const mapNull = (str, altStr = '') => {
+    return str ? str : altStr;
 };
