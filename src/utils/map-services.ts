@@ -1,4 +1,3 @@
-import { config } from "../config/config.js";
 import { ICourse } from "../models/ICourse";
 import { IFilter } from "../models/IFilter.js";
 import { IUser } from "../models/IUser";

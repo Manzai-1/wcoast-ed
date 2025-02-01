@@ -1,7 +1,7 @@
 import { ICourse } from "./models/ICourse";
 import { mapFormToICourse } from "./utils/map-services.js";
 import { getData, postData } from "./utils/http-services.js";
-import { handleUserLogin, updateLoginStatusText } from "./utils/login.js";
+import { handleUserLogin, updateLoginStatusText } from "./utils/login-services.js";
 import { config } from "./config/config.js";
 import { addImgOptions, displayCourses, displayMessage } from "./utils/course-services.js";
 

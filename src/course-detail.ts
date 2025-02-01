@@ -5,8 +5,8 @@ import { IUser } from "./models/IUser";
 import { displayMessage, getUrlID } from "./utils/course-services.js";
 import { createCourseDetailDiv } from "./utils/dom.js";
 import { getData, postData, updateData } from "./utils/http-services.js";
-import { handleUserLogin, isUserLoggedIn, updateLoginStatusText } from "./utils/login.js";
-import { getLoginFromStorage } from "./utils/storage.js";
+import { handleUserLogin, isUserLoggedIn, updateLoginStatusText } from "./utils/login-services.js";
+import { getFromStorage } from "./utils/storage.js";
 
 document.querySelector('#login-menu-item')!.addEventListener('click', handleUserLogin);
 const courseDetails:HTMLDivElement = document.querySelector<HTMLDivElement>('#course-detail-div')!;
@@ -26,7 +26,7 @@ const loadCourseDetails = async()=>{
 }
 
 const registerCourse = async()=>{
-    const user = getLoginFromStorage() as IUser;
+    const user = getFromStorage(config.localStorage.key) as IUser;
     updateCourseRegistry(getUrlID(), user);
     displayMessage('Registrering klar','',config.pages.courses);
 }

@@ -1,6 +1,6 @@
 import { ICourse } from "./models/ICourse";
 import { getData } from "./utils/http-services.js";
-import { handleUserLogin, updateLoginStatusText } from "./utils/login.js";
+import { handleUserLogin, updateLoginStatusText } from "./utils/login-services.js";
 import { filterCourses } from "./utils/filter-services.js";
 import { config } from "./config/config.js";
 import { displayCourses } from "./utils/course-services.js";

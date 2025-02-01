@@ -1,11 +1,10 @@
-import { config } from "../config/config.js";
-export const saveLoginToStorage = (user) => {
-    localStorage.setItem(config.localStorage.key, JSON.stringify(user));
+export const saveToStorage = (key, obj) => {
+    localStorage.setItem(key, JSON.stringify(obj));
 };
-export const getLoginFromStorage = () => {
-    const storedUser = localStorage.getItem(config.localStorage.key);
-    return storedUser ? JSON.parse(storedUser) : null;
+export const getFromStorage = (key) => {
+    const value = localStorage.getItem(key);
+    return value ? JSON.parse(value) : null;
 };
-export const clearLoginFromStorage = () => {
-    localStorage.removeItem(config.localStorage.key);
+export const removeFromStorage = (key) => {
+    localStorage.removeItem(key);
 };
