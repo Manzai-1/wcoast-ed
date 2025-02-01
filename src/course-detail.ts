@@ -1,10 +1,11 @@
 import { config } from "./config/config.js";
 import { ICourse } from "./models/ICourse";
 import { IUser } from "./models/IUser";
-import { displayMessage, getUrlID } from "./utils/course-services.js";
+import { getUrlID } from "./utils/course-services.js";
 import { createCourseDetailDiv } from "./utils/dom.js";
 import { getCourse, updateRegistry } from "./utils/http-helper.js";
 import { handleUserLogin, isUserLoggedIn, updateLoginStatusText } from "./utils/login-services.js";
+import { displayMessage } from "./utils/message.js";
 import { getFromStorage } from "./utils/storage.js";
 
 document.querySelector('#login-menu-item')!.addEventListener('click', handleUserLogin);

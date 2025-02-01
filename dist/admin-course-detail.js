@@ -3,7 +3,8 @@ import { getCourseDetails, getCourseUsers, updateCourse } from "./utils/http-hel
 import { mapFormToICourse } from "./utils/map-services.js";
 import { handleUserLogin, updateLoginStatusText } from "./utils/login-services.js";
 import { config } from "./config/config.js";
-import { addImgOptions, displayMessage, getUrlID, updateImagePreview } from "./utils/course-services.js";
+import { addImgOptions, getUrlID, updateImagePreview } from "./utils/course-services.js";
+import { displayMessage } from "./utils/message.js";
 document.querySelector('#login-menu-item').addEventListener('click', handleUserLogin);
 const courseForm = document.querySelector('#update-course-form');
 const initApp = () => {

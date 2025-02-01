@@ -1,3 +1,5 @@
+import { config } from "../config/config.js";
+import { displayMessage } from "./message.js";
 export const postData = async (endPoint, data) => {
     try {
         const response = await fetch(endPoint, {
@@ -12,7 +14,7 @@ export const postData = async (endPoint, data) => {
         }
     }
     catch (error) {
-        throw new Error(error);
+        displayMessage('Error', error, config.pages.main);
     }
 };
 export const getData = async (endPoint) => {
@@ -31,7 +33,7 @@ export const getData = async (endPoint) => {
         }
     }
     catch (error) {
-        throw new Error(error);
+        displayMessage('Error', error, config.pages.main);
     }
 };
 export const updateData = async (endPoint, data) => {
@@ -48,6 +50,6 @@ export const updateData = async (endPoint, data) => {
         }
     }
     catch (error) {
-        throw new Error(error);
+        displayMessage('Error', error, config.pages.main);
     }
 };

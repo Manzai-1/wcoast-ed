@@ -1,6 +1,6 @@
 import { config } from "../config/config.js";
 import { ICourse } from "../models/ICourse.js";
-import { createCourseDiv, createImageSelectDiv, createMessageDiv } from "./dom.js";
+import { createCourseDiv, createImageSelectDiv } from "./dom.js";
 
 export const addImgOptions = ()=>{
     const div = createImageSelectDiv();
@@ -28,11 +28,6 @@ export const displayCourses = (courses: ICourse[], forwardUrl:string)=>{
         );
         list.appendChild(div);
     });
-}
-
-export const displayMessage = (msgHead:string, msgBody:string, forwardUrl:string)=>{
-    const messageDiv = createMessageDiv(msgHead, msgBody, forwardUrl);
-    document.body.appendChild(messageDiv);
 }
 
 const handleSelectImage = (e:Event)=>{

@@ -20,6 +20,7 @@ export const config = {
         courseDetail: './course-detail.html',
         courses: './courses.html',
         adminCourseDetail: './admin-course-detail.html',
-        adminCourses: './admin-courses.html'
+        adminCourses: './admin-courses.html',
+        main: '../index.html'
     }
 }

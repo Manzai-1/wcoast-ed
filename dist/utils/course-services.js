@@ -1,5 +1,5 @@
 import { config } from "../config/config.js";
-import { createCourseDiv, createImageSelectDiv, createMessageDiv } from "./dom.js";
+import { createCourseDiv, createImageSelectDiv } from "./dom.js";
 export const addImgOptions = () => {
     const div = createImageSelectDiv();
     div.querySelector('#image-select')
@@ -20,10 +20,6 @@ export const displayCourses = (courses, forwardUrl) => {
         const div = createCourseDiv(course, `${forwardUrl}?id=${course.id}`);
         list.appendChild(div);
     });
-};
-export const displayMessage = (msgHead, msgBody, forwardUrl) => {
-    const messageDiv = createMessageDiv(msgHead, msgBody, forwardUrl);
-    document.body.appendChild(messageDiv);
 };
 const handleSelectImage = (e) => {
     const imgSelect = e.target;

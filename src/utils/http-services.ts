@@ -1,6 +1,8 @@
+import { config } from "../config/config.js";
 import { ICourse } from "../models/ICourse";
 import { IRegistration } from "../models/IRegistration";
 import { IUser } from "../models/IUser";
+import { displayMessage } from "./message.js";
 
 
 export const postData = async (endPoint: string,data: ICourse | IUser | IRegistration
@@ -18,7 +20,7 @@ export const postData = async (endPoint: string,data: ICourse | IUser | IRegistr
       throw new Error(`${response.status} - ${endPoint}`);
     }
   } catch (error: any) {
-    throw new Error(error);
+    displayMessage('Error',error,config.pages.main);
   }
 };
 
@@ -36,7 +38,7 @@ export const getData = async (endPoint: string): Promise<any> => {
       throw new Error(`${response.status} - ${endPoint}`);
     }
   } catch (error: any) {
-    throw new Error(error);
+    displayMessage('Error',error,config.pages.main);
   }
 };
 
@@ -53,6 +55,6 @@ export const updateData = async (endPoint: string, data: IRegistration|ICourse) 
       throw new Error(`${response.status} - ${endPoint}`);
     }
   } catch (error: any) {
-    throw new Error(error);
+    displayMessage('Error',error,config.pages.main);
   }
 };
