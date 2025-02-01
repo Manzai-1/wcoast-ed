@@ -1,4 +1,4 @@
-import { handleUserLogin, updateLoginStatusText } from "./utils/login.js";
+import { handleUserLogin, updateLoginStatusText } from "./utils/login-services.js";
 
 document.querySelector('#login-menu-item')!.addEventListener('click', handleUserLogin);
 

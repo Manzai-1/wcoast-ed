@@ -3,7 +3,7 @@ import { IRegistration } from "./models/IRegistration";
 import { createUserTable } from "./utils/dom.js";
 import { getData, updateData } from "./utils/http-services.js";
 import { mapFormToICourse } from "./utils/map-services.js";
-import { handleUserLogin, updateLoginStatusText } from "./utils/login.js";
+import { handleUserLogin, updateLoginStatusText } from "./utils/login-services.js";
 import { config } from "./config/config.js";
 import { addImgOptions, displayMessage, getUrlID, updateImagePreview } from "./utils/course-services.js";
 
