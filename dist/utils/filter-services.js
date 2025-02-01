@@ -1,5 +1,4 @@
-import { config } from '../config/config.js';
-import { getData } from './http-services.js';
+import { getCourseUserCount } from './http-helper.js';
 export const filterCourses = async (courses, filter) => {
     const filterCourses = [];
     for (const course of courses) {
@@ -19,7 +18,6 @@ export const filterCourses = async (courses, filter) => {
     return filterCourses;
 };
 const isPopular = async (id, minUsers) => {
-    const registry = await getData(`${config.endpoint.registry}?id=${id}`);
-    const userCount = registry.length > 0 ? registry[0].users.length : 0;
+    const userCount = await getCourseUserCount(id);
     return userCount >= minUsers;
 };

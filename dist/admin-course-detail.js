@@ -1,5 +1,5 @@
 import { createUserTable } from "./utils/dom.js";
-import { getData, updateData } from "./utils/http-services.js";
+import { getCourseDetails, getCourseUsers, updateCourse } from "./utils/http-helper.js";
 import { mapFormToICourse } from "./utils/map-services.js";
 import { handleUserLogin, updateLoginStatusText } from "./utils/login-services.js";
 import { config } from "./config/config.js";
@@ -7,19 +7,17 @@ import { addImgOptions, displayMessage, getUrlID, updateImagePreview } from "./u
 document.querySelector('#login-menu-item').addEventListener('click', handleUserLogin);
 const courseForm = document.querySelector('#update-course-form');
 const initApp = () => {
-    const id = location.search.split('=')[1];
-    loadCourseDetails(id);
+    const id = getUrlID();
     addImgOptions();
+    loadCourseDetails(id);
     loadCourseCustomers(id);
     updateLoginStatusText();
 };
 const loadCourseDetails = async (id) => {
-    const course = await getData(`${config.endpoint.courses}?id=${id}`);
-    displayCourseDetails(course[0]);
+    displayCourseDetails(await getCourseDetails(id));
 };
 const loadCourseCustomers = async (id) => {
-    const registry = await getData(`${config.endpoint.registry}?id=${id}`);
-    displayCourseCustomers(registry[0]);
+    displayCourseCustomers(await getCourseUsers(id));
 };
 const displayCourseDetails = (course) => {
     document.querySelector('#title').value = course.title;
@@ -32,15 +30,15 @@ const displayCourseDetails = (course) => {
     document.querySelector('#image-select').value = course.img;
     updateImagePreview(course.img);
 };
-const displayCourseCustomers = (registry) => {
-    const table = createUserTable(registry ? registry.users : []);
+const displayCourseCustomers = (users) => {
+    const table = createUserTable(users);
     document.querySelector('#course-customers-div')
         .appendChild(table);
 };
 const handleCourseUpdate = async (e) => {
     e.preventDefault();
     const course = mapFormToICourse(new FormData(courseForm));
-    updateData(`${config.endpoint.courses}/${getUrlID()}`, course);
+    updateCourse(getUrlID(), course);
     displayMessage('Kurs Uppdaterad', course.title, `${config.pages.adminCourseDetail}?id=${getUrlID()}`);
 };
 courseForm.addEventListener('submit', handleCourseUpdate);

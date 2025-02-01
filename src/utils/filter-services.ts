@@ -1,8 +1,6 @@
-import { config } from '../config/config.js';
 import { ICourse } from '../models/ICourse';
 import { IFilter } from '../models/IFilter.js';
-import { IRegistration } from '../models/IRegistration';
-import { getData } from './http-services.js';
+import { getCourseUserCount } from './http-helper.js';
 
 export const filterCourses = async(courses: ICourse[],filter:IFilter):Promise<ICourse[]> => {
     const filterCourses: ICourse[] = [];
@@ -21,7 +19,6 @@ export const filterCourses = async(courses: ICourse[],filter:IFilter):Promise<IC
 };
 
 const isPopular = async(id:string, minUsers:number):Promise<boolean>=>{
-    const registry:IRegistration[] = await getData(`${config.endpoint.registry}?id=${id}`);
-    const userCount:number = registry.length > 0 ? registry[0].users.length : 0;
+    const userCount:number = await getCourseUserCount(id);
     return userCount >= minUsers;
 }
