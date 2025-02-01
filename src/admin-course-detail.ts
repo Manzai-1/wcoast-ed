@@ -1,31 +1,29 @@
 import { ICourse } from "./models/ICourse";
-import { IRegistration } from "./models/IRegistration";
 import { createUserTable } from "./utils/dom.js";
-import { getData, updateData } from "./utils/http-services.js";
+import { getCourseDetails, getCourseUsers, updateCourse } from "./utils/http-helper.js";
 import { mapFormToICourse } from "./utils/map-services.js";
 import { handleUserLogin, updateLoginStatusText } from "./utils/login-services.js";
 import { config } from "./config/config.js";
 import { addImgOptions, displayMessage, getUrlID, updateImagePreview } from "./utils/course-services.js";
+import { IUser } from "./models/IUser";
 
 document.querySelector('#login-menu-item')!.addEventListener('click', handleUserLogin);
 const courseForm = document.querySelector<HTMLFormElement>('#update-course-form')!;
 
 const initApp = ()=>{
-    const id:string = location.search.split('=')[1];
-    loadCourseDetails(id);
+    const id:string = getUrlID();
     addImgOptions();
+    loadCourseDetails(id);
     loadCourseCustomers(id);
     updateLoginStatusText();
 }
 
 const loadCourseDetails = async(id:string)=>{
-    const course:ICourse[] = await getData(`${config.endpoint.courses}?id=${id}`);
-    displayCourseDetails(course[0]);
+    displayCourseDetails(await getCourseDetails(id));
 }
 
 const loadCourseCustomers = async(id:string)=>{
-    const registry:IRegistration[] = await getData(`${config.endpoint.registry}?id=${id}`);
-    displayCourseCustomers(registry[0]);
+    displayCourseCustomers(await getCourseUsers(id));
 }
 
 const displayCourseDetails = (course:ICourse)=>{
@@ -41,8 +39,8 @@ const displayCourseDetails = (course:ICourse)=>{
     updateImagePreview(course.img);
 }
 
-const displayCourseCustomers = (registry:IRegistration)=>{
-    const table:HTMLTableElement = createUserTable(registry ? registry.users:[])
+const displayCourseCustomers = (users:IUser[])=>{
+    const table:HTMLTableElement = createUserTable(users);
     document.querySelector<HTMLDivElement>('#course-customers-div')!
         .appendChild(table);
 }
@@ -51,7 +49,7 @@ const handleCourseUpdate = async(e:SubmitEvent)=>{
     e.preventDefault();
 
     const course:ICourse = mapFormToICourse(new FormData(courseForm));
-    updateData(`${config.endpoint.courses}/${getUrlID()}`, course);
+    updateCourse(getUrlID(), course);
 
     displayMessage(
         'Kurs Uppdaterad',

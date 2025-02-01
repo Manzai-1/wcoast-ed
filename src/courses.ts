@@ -1,5 +1,5 @@
 import { ICourse } from "./models/ICourse";
-import { getData } from "./utils/http-services.js";
+import { getCourses } from "./utils/http-helper.js";
 import { handleUserLogin, updateLoginStatusText } from "./utils/login-services.js";
 import { filterCourses } from "./utils/filter-services.js";
 import { config } from "./config/config.js";
@@ -11,19 +11,19 @@ document.querySelector('#login-menu-item')!.addEventListener('click', handleUser
 const searchForm = document.querySelector<HTMLFormElement>('#search-form')!;
 
 const initApp = ()=>{
-    loadCourses().then((courses:ICourse[]) => displayCourses(courses, config.pages.courseDetail));
+    loadCourses();
     updateLoginStatusText();
 }
 
-const loadCourses = async():Promise<ICourse[]>=>{
-    const courses:ICourse[] = await getData(config.endpoint.courses);
-    return courses;
+const loadCourses = async()=>{
+    const courses:ICourse[] = await getCourses();
+    displayCourses(courses, config.pages.courseDetail);
 }
 
 const handleSearchInput = async(e:Event)=>{
     const data = new FormData(searchForm);
     const courses:ICourse[] = await filterCourses(
-        await loadCourses(), 
+        await getCourses(), 
         mapFormToIFilter(data));
     displayCourses(courses, config.pages.courseDetail);
 }

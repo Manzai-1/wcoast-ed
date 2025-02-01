@@ -48,7 +48,7 @@ const createCourseDetailP = (id:string, description:string, value:string):string
   return p;
 }
 
-export const createUserTable = (users:[IUser]|[]): HTMLTableElement => {
+export const createUserTable = (users:IUser[]|[]): HTMLTableElement => {
   const table = document.createElement('table');
   table.classList.add('customer-table');
   table.innerHTML = `

@@ -1,10 +1,9 @@
 import { config } from "./config/config.js";
 import { ICourse } from "./models/ICourse";
-import { IRegistration } from "./models/IRegistration";
 import { IUser } from "./models/IUser";
 import { displayMessage, getUrlID } from "./utils/course-services.js";
 import { createCourseDetailDiv } from "./utils/dom.js";
-import { getData, postData, updateData } from "./utils/http-services.js";
+import { getCourse, updateRegistry } from "./utils/http-helper.js";
 import { handleUserLogin, isUserLoggedIn, updateLoginStatusText } from "./utils/login-services.js";
 import { getFromStorage } from "./utils/storage.js";
 
@@ -17,9 +16,10 @@ const initApp = ()=>{
 }
 
 const loadCourseDetails = async()=>{
-    const course:ICourse[] = await getData(`${config.endpoint.courses}?id=${getUrlID()}`);
+    const course:ICourse = await getCourse(getUrlID());
+
     courseDetails.innerHTML = '';
-    const courseDetailDiv:HTMLDivElement = createCourseDetailDiv(course[0]);
+    const courseDetailDiv:HTMLDivElement = createCourseDetailDiv(course);
     courseDetailDiv.querySelector('.register-button')!
         .addEventListener('click', handleRegisterCourse);
     courseDetails.appendChild(courseDetailDiv);
@@ -27,20 +27,8 @@ const loadCourseDetails = async()=>{
 
 const registerCourse = async()=>{
     const user = getFromStorage(config.localStorage.key) as IUser;
-    updateCourseRegistry(getUrlID(), user);
+    updateRegistry(getUrlID(), user);
     displayMessage('Registrering klar','',config.pages.courses);
-}
-
-const updateCourseRegistry = async(id:string, user:IUser)=>{
-    const registry:IRegistration[] = await getData(`${config.endpoint.registry}?id=${id}`);
-    
-    if(registry.length > 0){
-        registry[0].users.push(user);
-        updateData(`${config.endpoint.registry}/${id}`, registry[0]);
-    } else {
-        const newRegistry:IRegistration = { id: id, users: [user] }
-        postData(`${config.endpoint.registry}`, newRegistry);
-    }
 }
 
 const handleRegisterCourse = (e:Event)=>{
