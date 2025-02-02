@@ -1,24 +1,13 @@
 {
   "courses": [
     {
-      "title": "Typescript",
-      "courseNr": "288",
-      "lengthDays": "144",
-      "startDate": "2025-03-01",
-      "price": "5000",
-      "onSite": true,
-      "remote": true,
-      "img": "javascript.png",
-      "id": "24f6"
-    },
-    {
       "title": "HTML & CSS",
       "courseNr": "123444",
       "lengthDays": "21",
+      "onSite": "Ja",
+      "remote": "Ja",
       "startDate": "2025-06-01",
       "price": "1231",
-      "onSite": false,
-      "remote": true,
       "img": "html.png",
       "id": "fa71"
     },
@@ -76,17 +65,6 @@
       "startDate": "2025-08-01",
       "price": "2322",
       "img": "default.png"
-    },
-    {
-      "title": "Unit Testing",
-      "courseNr": "2333",
-      "lengthDays": "14",
-      "startDate": "2025-03-01",
-      "price": "5000",
-      "onSite": true,
-      "remote": true,
-      "img": "programming.png",
-      "id": "a7dc"
     }
   ],
   "registrations": [
@@ -128,18 +106,24 @@
           "name": "pelle",
           "address": "gatan 2",
           "mobileNr": "073444444"
-        }
-      ]
-    },
-    {
-      "id": "fa71",
-      "users": [
+        },
         {
           "id": "dawd@gmail.com",
           "name": "pelle",
           "address": "gatan 2",
           "mobileNr": "073444444"
         },
+        {
+          "id": "dawd@gmail.com",
+          "name": "pelle",
+          "address": "gatan 2",
+          "mobileNr": "073444444"
+        }
+      ]
+    },
+    {
+      "id": "fa71",
+      "users": [
         {
           "id": "dawd@gmail.com",
           "name": "pelle",

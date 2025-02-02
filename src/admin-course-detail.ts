@@ -28,13 +28,13 @@ const loadCourseCustomers = async(id:string)=>{
 }
 
 const displayCourseDetails = (course:ICourse)=>{
-    document.querySelector<HTMLInputElement>('#title')!.value = course.title;
-    document.querySelector<HTMLInputElement>('#courseNr')!.value = course.courseNr;
-    document.querySelector<HTMLInputElement>('#lengthDays')!.value = course.lengthDays;
-    document.querySelector<HTMLInputElement>('#onSite')!.checked = course.onSite;
-    document.querySelector<HTMLInputElement>('#remote')!.checked = course.remote;
-    document.querySelector<HTMLInputElement>('#startDate')!.value = course.startDate;
-    document.querySelector<HTMLInputElement>('#price')!.value = course.price;
+    document.querySelector<HTMLInputElement>('#title')!.value       = course.title;
+    document.querySelector<HTMLInputElement>('#courseNr')!.value    = course.courseNr;
+    document.querySelector<HTMLInputElement>('#lengthDays')!.value  = course.lengthDays;
+    document.querySelector<HTMLInputElement>('#onSite')!.checked    = course.onSite;
+    document.querySelector<HTMLInputElement>('#remote')!.checked    = course.remote;
+    document.querySelector<HTMLInputElement>('#startDate')!.value   = course.startDate;
+    document.querySelector<HTMLInputElement>('#price')!.value       = course.price;
     document.querySelector<HTMLSelectElement>('#image-select')!.value = course.img;
 
     updateImagePreview(course.img);
