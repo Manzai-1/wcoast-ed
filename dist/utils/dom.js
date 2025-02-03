@@ -125,7 +125,7 @@ export const createLoginDiv = () => {
 };
 export const createMessageDiv = (msgHead, msgBody, forwardUrl) => {
     const div = document.createElement('div');
-    div.id = '#login-div';
+    div.id = 'login-div';
     div.classList.add('course-form');
     div.classList.add('popup');
     div.innerHTML = `
