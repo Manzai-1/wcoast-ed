@@ -4,11 +4,11 @@
       "title": "HTML & CSS",
       "courseNr": "123444",
       "lengthDays": "21",
-      "onSite": "Ja",
-      "remote": "Ja",
       "startDate": "2025-06-01",
       "price": "1231",
-      "img": "html.png",
+      "onSite": true,
+      "remote": true,
+      "img": "blockchain.png",
       "id": "fa71"
     },
     {
